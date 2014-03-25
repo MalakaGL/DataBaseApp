@@ -6,17 +6,11 @@ package ViewLayer.Manager;
 
 import ControllLayer.Controller;
 import ControllLayer.Manager.ManagerController;
-import ControllLayer.ParityCheck;
-import ControllLayer.StoreKeeper.StoreKeeperController;
-import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JCheckBox;
-import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.UnsupportedLookAndFeelException;
 import onestopshop.LogIn;
 
@@ -811,6 +805,7 @@ public class ManagerView extends javax.swing.JFrame {
     ArrayList<Object> numbers = new ArrayList<>();
     ArrayList<String> users = new ArrayList<>();
     JTable current = new JTable();
-    private void setNotifications(){
+
+    private void setNotifications() {
     }
 }
