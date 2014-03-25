@@ -286,7 +286,11 @@ public class CashierView extends javax.swing.JFrame {
         total_text_field.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,###.00"))));
         total_text_field.setText("Rs. 0.00");
 
-        item_code_text_field.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU#####UU")));
+        try {
+            item_code_text_field.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU#####UU")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         item_code_text_field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 item_code_text_fieldActionPerformed(evt);
@@ -407,7 +411,11 @@ public class CashierView extends javax.swing.JFrame {
             }
         });
 
-        item_code_text_field1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU#####UU")));
+        try {
+            item_code_text_field1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("UU#####UU")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         item_code_text_field1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 item_code_text_field1ActionPerformed(evt);
@@ -489,7 +497,11 @@ public class CashierView extends javax.swing.JFrame {
             }
         });
 
-        customer_id_text_field.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######U")));
+        try {
+            customer_id_text_field.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######U")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         customer_id_text_field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 customer_id_text_fieldActionPerformed(evt);

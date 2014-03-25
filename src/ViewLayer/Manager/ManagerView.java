@@ -375,7 +375,7 @@ public class ManagerView extends javax.swing.JFrame {
         lblLoginData.setText(str);
 
         btnHomeCustomers.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btnHomeCustomers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Customer.png"))); // NOI18N
+        btnHomeCustomers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Manager/Customer.png"))); // NOI18N
         btnHomeCustomers.setText("Customers");
         btnHomeCustomers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -384,7 +384,7 @@ public class ManagerView extends javax.swing.JFrame {
         });
 
         btnHomeSuppliers.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btnHomeSuppliers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Supplier.png"))); // NOI18N
+        btnHomeSuppliers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Manager/Supplier.png"))); // NOI18N
         btnHomeSuppliers.setText("Suppliers");
         btnHomeSuppliers.setPreferredSize(new java.awt.Dimension(10, 50));
         btnHomeSuppliers.addActionListener(new java.awt.event.ActionListener() {
@@ -394,7 +394,7 @@ public class ManagerView extends javax.swing.JFrame {
         });
 
         btnHomeStock.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btnHomeStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/stock.png"))); // NOI18N
+        btnHomeStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Manager/stock.png"))); // NOI18N
         btnHomeStock.setText("Stock");
         btnHomeStock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -403,7 +403,7 @@ public class ManagerView extends javax.swing.JFrame {
         });
 
         btnHomeRep.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btnHomeRep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/SalesRep.png"))); // NOI18N
+        btnHomeRep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Manager/SalesRep.png"))); // NOI18N
         btnHomeRep.setText("Sales Representatives");
         btnHomeRep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -412,7 +412,7 @@ public class ManagerView extends javax.swing.JFrame {
         });
 
         btnHomeOrders.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btnHomeOrders.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/orders.png"))); // NOI18N
+        btnHomeOrders.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Manager/orders.png"))); // NOI18N
         btnHomeOrders.setText("Orders");
         btnHomeOrders.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -428,7 +428,7 @@ public class ManagerView extends javax.swing.JFrame {
         });
 
         btnHomeUserAcco.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        btnHomeUserAcco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/customerservice.png"))); // NOI18N
+        btnHomeUserAcco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Manager/customerservice.png"))); // NOI18N
         btnHomeUserAcco.setText("User Accounts");
         btnHomeUserAcco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
