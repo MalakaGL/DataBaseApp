@@ -6,11 +6,14 @@ package ViewLayer.Manager;
 
 import ControllLayer.Controller;
 import ControllLayer.Manager.ManagerController;
+import ViewLayer.Cashier.CashierView;
+import com.alee.laf.WebLookAndFeel;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
+import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import onestopshop.LogIn;
 
@@ -102,7 +105,6 @@ public class ManagerView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("One-Stop-Shop");
 
-        jTabbedPane1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTabbedPane1MouseClicked(evt);
@@ -201,17 +203,17 @@ public class ManagerView extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHomeLayout.createSequentialGroup()
                         .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlHomeLayout.createSequentialGroup()
-                                .addComponent(btnHomeRep, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                                .addComponent(btnHomeRep, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
                                 .addGap(169, 169, 169)
-                                .addComponent(btnHomeUserAcco, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE))
+                                .addComponent(btnHomeUserAcco, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
                             .addGroup(pnlHomeLayout.createSequentialGroup()
                                 .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnHomeCustomers, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-                                    .addComponent(btnHomeSuppliers, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE))
+                                    .addComponent(btnHomeCustomers, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                                    .addComponent(btnHomeSuppliers, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
                                 .addGap(169, 169, 169)
                                 .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnHomeOrders, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
-                                    .addComponent(btnHomeStock, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE))))
+                                    .addComponent(btnHomeOrders, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                                    .addComponent(btnHomeStock, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))))
                         .addGap(18, 18, 18))
                     .addGroup(pnlHomeLayout.createSequentialGroup()
                         .addComponent(lblLoginData, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -226,15 +228,15 @@ public class ManagerView extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addGroup(pnlHomeLayout.createSequentialGroup()
-                        .addComponent(btnHomeStock, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                        .addComponent(btnHomeStock, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnHomeOrders, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                        .addComponent(btnHomeOrders, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
                         .addGap(11, 11, 11)
-                        .addComponent(btnHomeUserAcco, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE))
+                        .addComponent(btnHomeUserAcco, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE))
                     .addGroup(pnlHomeLayout.createSequentialGroup()
-                        .addComponent(btnHomeCustomers, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                        .addComponent(btnHomeCustomers, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnHomeSuppliers, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                        .addComponent(btnHomeSuppliers, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
                         .addGap(11, 11, 11)
                         .addComponent(btnHomeRep, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)))
                 .addGap(92, 92, 92)
@@ -246,7 +248,6 @@ public class ManagerView extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Home", pnlHome);
 
-        jTabbedPane2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jTabbedPane2.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jTabbedPane2StateChanged(evt);
@@ -257,11 +258,11 @@ public class ManagerView extends javax.swing.JFrame {
         pnlFindCust.setLayout(pnlFindCustLayout);
         pnlFindCustLayout.setHorizontalGroup(
             pnlFindCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 636, Short.MAX_VALUE)
+            .addGap(0, 644, Short.MAX_VALUE)
         );
         pnlFindCustLayout.setVerticalGroup(
             pnlFindCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 417, Short.MAX_VALUE)
+            .addGap(0, 418, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Search Customer", pnlFindCust);
@@ -270,11 +271,11 @@ public class ManagerView extends javax.swing.JFrame {
         pnlNewCustomer.setLayout(pnlNewCustomerLayout);
         pnlNewCustomerLayout.setHorizontalGroup(
             pnlNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 636, Short.MAX_VALUE)
+            .addGap(0, 644, Short.MAX_VALUE)
         );
         pnlNewCustomerLayout.setVerticalGroup(
             pnlNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 417, Short.MAX_VALUE)
+            .addGap(0, 418, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Add New Customer", pnlNewCustomer);
@@ -283,11 +284,11 @@ public class ManagerView extends javax.swing.JFrame {
         pnlEditCust.setLayout(pnlEditCustLayout);
         pnlEditCustLayout.setHorizontalGroup(
             pnlEditCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 636, Short.MAX_VALUE)
+            .addGap(0, 644, Short.MAX_VALUE)
         );
         pnlEditCustLayout.setVerticalGroup(
             pnlEditCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 417, Short.MAX_VALUE)
+            .addGap(0, 418, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Edit Customer Details", pnlEditCust);
@@ -315,11 +316,11 @@ public class ManagerView extends javax.swing.JFrame {
         pnlFindSup.setLayout(pnlFindSupLayout);
         pnlFindSupLayout.setHorizontalGroup(
             pnlFindSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 664, Short.MAX_VALUE)
         );
         pnlFindSupLayout.setVerticalGroup(
             pnlFindSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 443, Short.MAX_VALUE)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
         jTabbedPane4.addTab("Find Supplier", pnlFindSup);
@@ -328,11 +329,11 @@ public class ManagerView extends javax.swing.JFrame {
         pnlEditSup.setLayout(pnlEditSupLayout);
         pnlEditSupLayout.setHorizontalGroup(
             pnlEditSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 664, Short.MAX_VALUE)
         );
         pnlEditSupLayout.setVerticalGroup(
             pnlEditSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 443, Short.MAX_VALUE)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
         jTabbedPane4.addTab("Edit Supplier", pnlEditSup);
@@ -341,11 +342,11 @@ public class ManagerView extends javax.swing.JFrame {
         pnlNewSup.setLayout(pnlNewSupLayout);
         pnlNewSupLayout.setHorizontalGroup(
             pnlNewSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 664, Short.MAX_VALUE)
         );
         pnlNewSupLayout.setVerticalGroup(
             pnlNewSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 443, Short.MAX_VALUE)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
         jTabbedPane4.addTab("New Supplier", pnlNewSup);
@@ -363,17 +364,15 @@ public class ManagerView extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Suppliers", pnlSuppliers);
 
-        jTabbedPane6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-
         javax.swing.GroupLayout pnlFindCust1Layout = new javax.swing.GroupLayout(pnlFindCust1);
         pnlFindCust1.setLayout(pnlFindCust1Layout);
         pnlFindCust1Layout.setHorizontalGroup(
             pnlFindCust1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 656, Short.MAX_VALUE)
+            .addGap(0, 664, Short.MAX_VALUE)
         );
         pnlFindCust1Layout.setVerticalGroup(
             pnlFindCust1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
         jTabbedPane6.addTab("Find Sales Rep", pnlFindCust1);
@@ -382,11 +381,11 @@ public class ManagerView extends javax.swing.JFrame {
         pnlNewSalesRep.setLayout(pnlNewSalesRepLayout);
         pnlNewSalesRepLayout.setHorizontalGroup(
             pnlNewSalesRepLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 656, Short.MAX_VALUE)
+            .addGap(0, 664, Short.MAX_VALUE)
         );
         pnlNewSalesRepLayout.setVerticalGroup(
             pnlNewSalesRepLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
         jTabbedPane6.addTab("New Sales Rep", pnlNewSalesRep);
@@ -395,11 +394,11 @@ public class ManagerView extends javax.swing.JFrame {
         pnlEditCust1.setLayout(pnlEditCust1Layout);
         pnlEditCust1Layout.setHorizontalGroup(
             pnlEditCust1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 656, Short.MAX_VALUE)
+            .addGap(0, 664, Short.MAX_VALUE)
         );
         pnlEditCust1Layout.setVerticalGroup(
             pnlEditCust1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
         jTabbedPane6.addTab("Edit Sales Rep Details", pnlEditCust1);
@@ -408,11 +407,11 @@ public class ManagerView extends javax.swing.JFrame {
         pnlSalesReps.setLayout(pnlSalesRepsLayout);
         pnlSalesRepsLayout.setHorizontalGroup(
             pnlSalesRepsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane6)
+            .addComponent(jTabbedPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE)
         );
         pnlSalesRepsLayout.setVerticalGroup(
             pnlSalesRepsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane6)
+            .addComponent(jTabbedPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Sales Reps", pnlSalesReps);
@@ -421,11 +420,11 @@ public class ManagerView extends javax.swing.JFrame {
         pnlFindItem.setLayout(pnlFindItemLayout);
         pnlFindItemLayout.setHorizontalGroup(
             pnlFindItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 664, Short.MAX_VALUE)
         );
         pnlFindItemLayout.setVerticalGroup(
             pnlFindItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 443, Short.MAX_VALUE)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
         jTabbedPane5.addTab("Search Item", pnlFindItem);
@@ -447,11 +446,11 @@ public class ManagerView extends javax.swing.JFrame {
         pnlFindOrder1.setLayout(pnlFindOrder1Layout);
         pnlFindOrder1Layout.setHorizontalGroup(
             pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 664, Short.MAX_VALUE)
         );
         pnlFindOrder1Layout.setVerticalGroup(
             pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 443, Short.MAX_VALUE)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
         jTabbedPane7.addTab("Create User", pnlFindOrder1);
@@ -460,11 +459,11 @@ public class ManagerView extends javax.swing.JFrame {
         pnlEditOrder1.setLayout(pnlEditOrder1Layout);
         pnlEditOrder1Layout.setHorizontalGroup(
             pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 664, Short.MAX_VALUE)
         );
         pnlEditOrder1Layout.setVerticalGroup(
             pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 443, Short.MAX_VALUE)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
         jTabbedPane7.addTab("Edit User", pnlEditOrder1);
@@ -473,11 +472,11 @@ public class ManagerView extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 664, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 443, Short.MAX_VALUE)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
         jTabbedPane7.addTab("Search User", jPanel2);
@@ -488,11 +487,11 @@ public class ManagerView extends javax.swing.JFrame {
         pnlFindOrder.setLayout(pnlFindOrderLayout);
         pnlFindOrderLayout.setHorizontalGroup(
             pnlFindOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 664, Short.MAX_VALUE)
         );
         pnlFindOrderLayout.setVerticalGroup(
             pnlFindOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 432, Short.MAX_VALUE)
+            .addGap(0, 429, Short.MAX_VALUE)
         );
 
         jTabbedPane3.addTab("Find Order", pnlFindOrder);
@@ -501,11 +500,11 @@ public class ManagerView extends javax.swing.JFrame {
         pnlNewOrder.setLayout(pnlNewOrderLayout);
         pnlNewOrderLayout.setHorizontalGroup(
             pnlNewOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 664, Short.MAX_VALUE)
         );
         pnlNewOrderLayout.setVerticalGroup(
             pnlNewOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 432, Short.MAX_VALUE)
+            .addGap(0, 429, Short.MAX_VALUE)
         );
 
         jTabbedPane3.addTab("New Order", pnlNewOrder);
@@ -514,11 +513,11 @@ public class ManagerView extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 664, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 432, Short.MAX_VALUE)
+            .addGap(0, 429, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout pnlNewOrder1Layout = new javax.swing.GroupLayout(pnlNewOrder1);
@@ -538,11 +537,11 @@ public class ManagerView extends javax.swing.JFrame {
         pnlEditOrder.setLayout(pnlEditOrderLayout);
         pnlEditOrderLayout.setHorizontalGroup(
             pnlEditOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGap(0, 664, Short.MAX_VALUE)
         );
         pnlEditOrderLayout.setVerticalGroup(
             pnlEditOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 432, Short.MAX_VALUE)
+            .addGap(0, 429, Short.MAX_VALUE)
         );
 
         jTabbedPane3.addTab("Edit Order", pnlEditOrder);
@@ -699,13 +698,13 @@ public class ManagerView extends javax.swing.JFrame {
         numbers = new ArrayList<>();
         switch (sourceTabbedPane.getSelectedIndex()) {
             case 1:
-                CustNew.btnAddTP.doClick();
+//                CustNew.btnAddTP.doClick();
                 break;
             case 2:
-                SupNew.btnAddTPSup.doClick();
+//                SupNew.btnAddTPSup.doClick();
                 break;
             case 3:
-                RepNew.btnAddTPSRep.doClick();
+//                RepNew.btnAddTPSRep.doClick();
             case 5:
                 users = ManagerController.getUsers();
         }
@@ -724,24 +723,49 @@ public class ManagerView extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+        
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info :
-                    javax.swing.UIManager.getInstalledLookAndFeels()) {
+           /*for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
-            }
-        } catch (InstantiationException ex) {
-            Logger.getLogger(ManagerView.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(ManagerView.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(ManagerView.class.getName()).log(Level.SEVERE, null, ex);
+            }*/
+            
+            // Set System L&F
+        /*UIManager.setLookAndFeel(
+            UIManager.getSystemLookAndFeelClassName());*/
+            
+            //UIManager.setLookAndFeel("de.javasoft.plaf.synthetica.SyntheticaAluOxideLookAndFeel");
+            UIManager.setLookAndFeel ( WebLookAndFeel.class.getCanonicalName () );
+            
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LogIn.class.getName())
-                    .log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CashierView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(CashierView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(CashierView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(CashierView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info :
+//                    javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (InstantiationException ex) {
+//            Logger.getLogger(ManagerView.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            Logger.getLogger(ManagerView.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (UnsupportedLookAndFeelException ex) {
+//            Logger.getLogger(ManagerView.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(LogIn.class.getName())
+//                    .log(java.util.logging.Level.SEVERE, null, ex);
+//        }
         //</editor-fold>
 
         /* Create and display the form */
