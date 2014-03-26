@@ -82,7 +82,6 @@
                                               <EmptySpace max="32767" attributes="0"/>
                                               <Component id="txtEditCustAddStrt" min="-2" pref="148" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="txtEditCustID" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
                                           <Component id="txtEditCustName" alignment="0" max="32767" attributes="0"/>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
@@ -91,6 +90,10 @@
                                           </Group>
                                           <Component id="txtEditCustEmail" alignment="0" max="32767" attributes="0"/>
                                           <Component id="txtEditCustTP2" alignment="0" min="-2" pref="223" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="txtEditCustID" min="-2" pref="112" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
