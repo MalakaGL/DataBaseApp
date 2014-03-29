@@ -8,6 +8,7 @@ import ControllLayer.Controller;
 import ViewLayer.Cashier.CashierView;
 import com.alee.laf.WebLookAndFeel;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.UIManager;
@@ -18,6 +19,10 @@ import onestopshop.LogIn;
  * @author Malakagl
  */
 public class ManagerView extends javax.swing.JFrame {
+
+    public static void showMessage(String string) {
+        JOptionPane.showMessageDialog(null, string);
+    }
 
     /**
      * Creates new form ManagerView
@@ -102,11 +107,6 @@ public class ManagerView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("One-Stop-Shop");
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
-            }
-        });
 
         jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -630,11 +630,6 @@ public class ManagerView extends javax.swing.JFrame {
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jTabbedPane1MouseClicked
-
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // TODO add your handling code here:
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
-    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments

@@ -4,7 +4,9 @@
  */
 package ControllLayer.Manager;
 
+import ControllLayer.ParityCheck;
 import DataLayer.ConnectManager;
+import ViewLayer.Manager.ManagerView;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -12,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -27,6 +30,13 @@ public class ManagerController {
         for (int i = 0; i < 8; i++) {
             details[i] = (String) detail.get(i);
         }
+        String id = ConnectManager.getNextId("Customer", "CustomerID");
+        if(!((String)detail.get(0)).equals(id)){
+            details[0] = id;
+            detail.set(0, id);
+            ManagerView.showMessage("Customer ID Was Changed To CU" + id
+                    + ParityCheck.getKey(id));
+        }
         int t1 = ConnectManager.insertData("Customer", details);
         if (!((String) detail.get(8)).equals("0")) {
             details = new String[7];
@@ -36,7 +46,7 @@ public class ManagerController {
             details[3] = null;
             details[4] = "0";
             details[5] = "0";
-            details[5] = "0";
+            details[6] = "0";
             ConnectManager.insertData("creditfacility", details);
         }
         details = new String[2];
@@ -55,6 +65,13 @@ public class ManagerController {
         String[] details = new String[5];
         for (int i = 0; i < details.length; i++) {
             details[i] = (String) detail.get(i);
+        }
+        String id = ConnectManager.getNextId("Supplier", "SupplierID");
+        if(details[0].equals(id)){
+            ManagerView.showMessage("Suplier ID was changed to SU" + id +
+                    ParityCheck.getKey(id));
+            details[0] = id;
+            detail.set(0, id);
         }
         int t1 = ConnectManager.insertData("Supplier", details);
         details = new String[2];
@@ -289,72 +306,85 @@ public class ManagerController {
         return new DefaultTableModel(data, getRemainingIdentifiers(columnIndex,table));
 
     }
+    
+    public static JTable getTable(Object[] conds) {
+
+        String[] param = new String[11];
+        for (int i = 0; i < param.length; i++) {
+            param[i] = "";
+        }
+
+        String attr, predicate,addValue;
+
+        attr = (String)conds[0];
+        predicate = "'" +(String) conds[1] +"'";
+        addValue="";
+
+        if ((Boolean) conds[2]) {
+            param[0] = "ItemCode";
+            addValue="CONCAT( BrandCode, ItemTypeCode ) AS ";
+        }
+        if ((Boolean) conds[3]) {
+            param[1] = "ItemTypeName";
+        }
+        if ((Boolean) conds[4]) {
+            param[2] = "BrandName";
+        }
+        if ((Boolean) conds[5]) {
+            param[3] = "BuyingPrice";
+        }
+        if ((Boolean) conds[6]) {
+            param[4] = "SellingPrice";
+        }
+       if ((Boolean) conds[7]) {
+           param[5] = "LastIntake";
+       }
+        if ((Boolean) conds[8]) {
+            param[6] = "LastBuyingQty";
+        }  
+        if ((Boolean) conds[9]) {
+            param[7] = "AvailableQty";
+        }
+        if ((Boolean) conds[10]) {
+            param[8] = "Description";
+        }
+        if ((Boolean) conds[11]) {
+            param[9] = "SizeDesc";
+        }
+
+        ResultSet resultSet = ConnectManager.getSelectedDataExtended("ItemDetail", 
+                param, attr, predicate,addValue, "=");
+
+        if (resultSet == null) { //this is not working
+            return null;
+        } else {
+            return getTable(resultSet);
+        }
+    }
+    
+    public static String[] getReps(){
+        try {
+            String param[] = new String[2];
+            param[0] = "FirstName";
+            param[1] = "SalesRepID";
+            String predicate = "1";
+            String attr = "1";
+            ResultSet rs = ConnectManager.getSelectedData("employee", param, 
+                    attr, predicate);
+            String result [] = null;
+            if(rs.next()){
+                rs.last();
+                result = new String[rs.getRow()];
+                rs.beforeFirst();
+            }
+            while(rs.next()){
+                result[rs.getRow()-1] = rs.getString("FirstName") + "("+
+                        rs.getString("SalesRepID") + ")";
+            }
+            return result;
+        } catch (SQLException ex) {
+            Logger.getLogger(ManagerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }   
 }
-//public static String[] getCustomerDetails(String id) {
-//        String[] details = new String[8];
-//        try {
-//            String[] all = new String[1];
-//            all[0] = "*";
-//
-//            ResultSet rs = ConnectManager.getSelectedData("Customer natural "
-//                    + "join customercontact", all, "CustomerID", id);
-//            System.out.println("Resultset : " + rs);
-//            if (rs.next()) {
-//                details[0] = rs.getString(1);
-//                details[1] = rs.getString(2);
-//                details[2] = rs.getString(3);
-//                details[3] = rs.getString(4);
-//                details[4] = rs.getString(5);
-//                details[5] = rs.getString(6);
-//                details[6] = rs.getString(7);
-//                if (rs.next()) {
-//                    details[7] = rs.getString(8);
-//
-//
-//                }
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(ManagerController.class
-//                    .getName()).log(
-//                    Level.SEVERE, null, ex);
-//        }
-//        return details;
-//    }
-//String[] param = new String[12];
-//        for (int i = 0; i < param.length; i++) {
-//            param[i] = "";
-//        }
-//        String attr, predicate;
-//        attr = (String) conds[0];
-//        predicate = (String) conds[1];
-//
-//        if ((Boolean) conds[2]) {
-//            param[0] = "CustomerID";
-//        }
-//        if ((Boolean) conds[3]) {
-//            param[1] = "FirstName";
-//        }
-//        if ((Boolean) conds[4]) {
-//            param[2] = "AddressCity";
-//        }
-//        if ((Boolean) conds[5]) {
-//            param[3] = "Email";
-//        }
-//        if ((Boolean) conds[6]) {
-//            param[4] = "CustomerType";
-//        }
-//        if ((Boolean) conds[7]) {
-//            param[5] = "Phone_Num_";
-//        }
-//        if ((Boolean) conds[8]) {
-//            param[6] = "Creditlimit";
-//        }
-//        if ((Boolean) conds[9]) {
-//            param[7] = "availablecredit";
-//        }
-//        if ((Boolean) conds[10]) {
-//            param[8] = "clearcount";
-//        }
-//        if ((Boolean) conds[11]) {
-//            param[9] = "totalpoint";
-//        }

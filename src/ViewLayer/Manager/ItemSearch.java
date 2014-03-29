@@ -4,7 +4,7 @@
  */
 package ViewLayer.Manager;
 
-import ControllLayer.StoreKeeper.StoreKeeperController;
+import ControllLayer.Manager.ManagerController;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
@@ -266,7 +266,7 @@ public class ItemSearch extends javax.swing.JPanel {
         conditions[10] = chkBoxDes.isSelected();
         conditions[11]=chkBoxSize.isSelected();
 
-        JTable table = StoreKeeperController.getTable(conditions);
+        JTable table = ManagerController.getTable(conditions);
 
         if (table == null || table.getRowCount() == 0) {
             JOptionPane.showMessageDialog(this, "No result found.");

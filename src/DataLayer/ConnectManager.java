@@ -25,8 +25,8 @@ public class ConnectManager {
 
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(
-                    //"jdbc:mysql://localhost/one_stop_shop", "root", "");
-                    "jdbc:mysql://localhost:45000/one_stop_shop", "noma", "RoEqnC7b");
+                    "jdbc:mysql://localhost/one_stop_shop", "root", "");
+                    //"jdbc:mysql://localhost:45000/one_stop_shop", "noma", "RoEqnC7b");
             return con;
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ConnectManager.class.getName()).log(Level.SEVERE,
@@ -256,104 +256,4 @@ public class ConnectManager {
         }
         return null;
     }
-    
-    public static ResultSet runquery(String query){
-        Connection con = getConnection();
-        PreparedStatement pStmt;
-        try {
-            pStmt = con.prepareStatement(query);
-            ResultSet resultSet = pStmt.executeQuery();
-            return resultSet;
-        } catch (SQLException ex) {
-            Logger.getLogger(ConnectManager.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-
-    }
-    
-    public static ResultSet getLastId(String table) {
-        String query="SELECT max(ItemID) from " + table;
-            Connection con=getConnection();       
-            Statement stmnt;
-        try {
-            stmnt = con.createStatement();
-            ResultSet res = stmnt.executeQuery(query);
-            return res;
-        } catch (SQLException ex) {
-            Logger.getLogger(ConnectManager.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }
-    
-    public static int insertData(String table , String [][] details) {
-        int temp = 0;
-        try {
-            Connection con = getConnection();
-            String values = "'";
-            
-            for (int i = 0; i < details.length; i++) {
-                    values += details[i][0] +"','";
-            }
-            
-            values = values.substring(0, values.length()-2);
-            PreparedStatement pStmt = con.prepareStatement(
-                    "insert into "+ table +" value("+values+")");
-            System.out.println("Statement : " + pStmt);
-            temp = pStmt.executeUpdate();
-            pStmt.close();
-            con.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(ConnectManager.class.getName()).log(Level.SEVERE,
-                    null, ex);
-        }
-        return temp;
-    }
-    
-//    public static ResultSet getView(String customerDetails, String[] param, 
-//            String attr, String predicate) {
-//        try {
-//            ResultSet rs = null;
-//            String values = "";
-//            for (int i = 0; i < param.length; i++) {
-//                System.out.println("Parameter " + i + " : " + param[i]);
-//                if (!param[i].equals("")) {
-//                    values += param[i] + ",";
-//                }
-//            }
-//            values = values.substring(0, values.length() - 1);
-//            Connection con = ConnectManager.getConnection();
-//            PreparedStatement pStmt = con.prepareStatement(
-//                    "Select " + values
-//                    + " FROM " + customerDetails 
-//                    + " WHERE " + attr + " = '" + predicate + "'");
-//            System.out.println("statement : " + pStmt);
-//            return pStmt.executeQuery();
-//        } catch (SQLException ex) {
-//            Logger.getLogger(ConnectManager.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        return null;
-//    }
 }
-
-
-//create view CustomerDetails as
-//select c.customerid,c.firstname, c.lastname, c.addresscity,
-//	c.email, c.customertype, f.creditlimit, f.availablecredit,
-//        f.totalpoint ,
-//       max(p.telephonenumber) Phone_Num_1,
-//       case 
-//           when max(p.telephoneNumber) = min(p.telephonenumber) then NULL 
-//           else min(p.telephonenumber) 
-//       end Phone_Num_2
-//from customer c natural join creditfacility f
-//left join customercontact p on c.customerid = p.id
-//group by c.customerid
-
-//
-//create view customerdetails as
-//select c.customerid,c.firstname, c.lastname, c.addressnumber + c.addressstreet + 
-//        c.addresscity, c.email, c.customertype, f.creditlimit, f.availablecredit,
-//        f.totalpoint, telephonenumber, f.firstissue, f.dueperiod, f.clearcount
-//from customer c natural join customercontact natural join creditfacility f
-//where c.customerid =  customercontact.id
-//group by customerid

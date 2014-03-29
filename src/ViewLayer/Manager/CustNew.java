@@ -8,6 +8,9 @@ import ControllLayer.Manager.ManagerController;
 import ControllLayer.ParityCheck;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -22,6 +25,7 @@ public class CustNew extends javax.swing.JPanel {
      */
     public CustNew() {
         initComponents();
+        btnAddTP.doClick();
     }
 
     /**
@@ -36,7 +40,7 @@ public class CustNew extends javax.swing.JPanel {
         jScrollPane6 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         txtNewCustName = new javax.swing.JTextField();
-        txtNewCustAddCity = new javax.swing.JTextField();
+        txtNewCustAddStrt = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         btnNewCustCreate = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
@@ -44,7 +48,7 @@ public class CustNew extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         jTxtAddNum = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtNewCustAddStrt = new javax.swing.JTextField();
+        txtNewCustAddCity = new javax.swing.JTextField();
         txtNewCustEmail = new javax.swing.JTextField();
         txtNewCustID = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -55,21 +59,14 @@ public class CustNew extends javax.swing.JPanel {
         btnNewCustCancel = new javax.swing.JButton();
         pnlAddTP = new javax.swing.JPanel(new GridLayout(0,1));
         btnAddTP = new javax.swing.JButton();
-        jLabel35 = new javax.swing.JLabel();
-        txtNewCustCreditLimit = new javax.swing.JTextField();
-        chkCreditFacAccepted = new javax.swing.JCheckBox();
         jLabel44 = new javax.swing.JLabel();
-        txtNewCustName1 = new javax.swing.JTextField();
+        txtNewCustLastName = new javax.swing.JTextField();
+        pnlCustType = new javax.swing.JPanel(new GridLayout(0,1));
 
         jScrollPane6.setPreferredSize(new java.awt.Dimension(720, 592));
 
         jPanel3.setPreferredSize(new java.awt.Dimension(700, 490));
 
-        txtNewCustName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNewCustNameActionPerformed(evt);
-            }
-        });
         txtNewCustName.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtNewCustNameFocusGained(evt);
@@ -95,9 +92,9 @@ public class CustNew extends javax.swing.JPanel {
 
         jLabel5.setText("Customer ID");
 
-        txtNewCustAddStrt.addActionListener(new java.awt.event.ActionListener() {
+        txtNewCustAddCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNewCustAddStrtActionPerformed(evt);
+                txtNewCustAddCityActionPerformed(evt);
             }
         });
 
@@ -116,11 +113,6 @@ public class CustNew extends javax.swing.JPanel {
         jLabel12.setText("E-mail");
 
         cmbNewCustType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Mail-Order", "Large Order", "Walk-In VIP" }));
-        cmbNewCustType.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cmbNewCustTypeItemStateChanged(evt);
-            }
-        });
         cmbNewCustType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbNewCustTypeActionPerformed(evt);
@@ -141,28 +133,16 @@ public class CustNew extends javax.swing.JPanel {
             }
         });
 
-        jLabel35.setText("Credit Limit");
-
-        txtNewCustCreditLimit.setEditable(false);
-
-        chkCreditFacAccepted.setText("Credit Facility Accepted");
-        chkCreditFacAccepted.setEnabled(false);
-        chkCreditFacAccepted.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                chkCreditFacAcceptedItemStateChanged(evt);
-            }
-        });
-
         jLabel44.setText("Last Name");
 
-        txtNewCustName1.addActionListener(new java.awt.event.ActionListener() {
+        txtNewCustLastName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNewCustName1ActionPerformed(evt);
+                txtNewCustLastNameActionPerformed(evt);
             }
         });
-        txtNewCustName1.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtNewCustLastName.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                txtNewCustName1FocusGained(evt);
+                txtNewCustLastNameFocusGained(evt);
             }
         });
 
@@ -172,14 +152,11 @@ public class CustNew extends javax.swing.JPanel {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(btnNewCustCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnNewCustCancel))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(pnlCustType, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTxtAddNum)
                                     .addComponent(jLabel12)
@@ -187,37 +164,37 @@ public class CustNew extends javax.swing.JPanel {
                                 .addGap(32, 32, 32)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtNewCustEmail)
-                                    .addComponent(btnAddTP)
                                     .addComponent(pnlAddTP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel10)
                                             .addComponent(jLabel9)
                                             .addComponent(jLabel11))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtNewCustAddStrt, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+                                            .addComponent(txtNewCustAddCity, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
                                             .addComponent(txtNewCustAddNum)
-                                            .addComponent(txtNewCustAddCity))))))
+                                            .addComponent(txtNewCustAddStrt)))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(btnAddTP)
+                                        .addGap(42, 42, 42)
+                                        .addComponent(btnNewCustCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnNewCustCancel))))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(49, 49, 49)
+                                .addComponent(cmbNewCustType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel13)
-                                .addComponent(jLabel35))
-                            .addGap(49, 49, 49)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cmbNewCustType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtNewCustCreditLimit))))
-                    .addComponent(chkCreditFacAccepted)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel44))
-                        .addGap(62, 62, 62)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNewCustID, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNewCustName, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
-                            .addComponent(txtNewCustName1))))
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel7)
+                                .addComponent(jLabel44))
+                            .addGap(62, 62, 62)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtNewCustID, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtNewCustName, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
+                                .addComponent(txtNewCustLastName)))))
                 .addContainerGap(243, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -234,7 +211,7 @@ public class CustNew extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44)
-                    .addComponent(txtNewCustName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNewCustLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTxtAddNum)
@@ -243,11 +220,11 @@ public class CustNew extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(txtNewCustAddCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNewCustAddStrt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(txtNewCustAddStrt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNewCustAddCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel12)
@@ -262,18 +239,16 @@ public class CustNew extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(cmbNewCustType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addComponent(chkCreditFacAccepted)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel35)
-                    .addComponent(txtNewCustCreditLimit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlCustType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNewCustCancel)
                     .addComponent(btnNewCustCreate))
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap(138, Short.MAX_VALUE))
         );
+
+        txtNewCustAddNum.getAccessibleContext().setAccessibleName("");
 
         jScrollPane6.setViewportView(jPanel3);
 
@@ -295,10 +270,6 @@ public class CustNew extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNewCustNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNewCustNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNewCustNameActionPerformed
-
     private void txtNewCustNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNewCustNameFocusGained
         // TODO add your handling code here:
         String id = ManagerController.getNewCustomerID();
@@ -309,20 +280,15 @@ public class CustNew extends javax.swing.JPanel {
     private void btnNewCustCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewCustCreateActionPerformed
         // TODO add your handling code here:
         String id = txtNewCustID.getText();
-        details.add(txtNewCustID.getText().substring(2, id.length() - 1));
+        details.add(id.substring(2, id.length() - 1));
         details.add(txtNewCustName.getText());
-        details.add(txtNewCustName1.getText());
-        details.add(txtNewCustAddStrt.getText());
+        details.add(txtNewCustLastName.getText());
         details.add(txtNewCustAddCity.getText());
+        details.add(txtNewCustAddStrt.getText());
         details.add(txtNewCustAddNum.getText());
         details.add(txtNewCustEmail.getText());
         details.add(((String) cmbNewCustType.getSelectedItem()).charAt(0) + "");
-        if (chkCreditFacAccepted.isSelected()
-                && !txtNewCustCreditLimit.getText().equals("")) {
-            details.add(txtNewCustCreditLimit.getText());
-        } else {
-            details.add("0");
-        }
+        
         for (int i = 0; i < numbers.size(); i++) {
             details.add(((JTextField) numbers.get(i)).getText());
         }
@@ -337,51 +303,41 @@ public class CustNew extends javax.swing.JPanel {
 
         txtNewCustID.setText("");
         txtNewCustName.setText("");
-        txtNewCustName1.setText("");
-        txtNewCustAddCity.setText("");
+        txtNewCustLastName.setText("");
         txtNewCustAddStrt.setText("");
+        txtNewCustAddCity.setText("");
         txtNewCustAddNum.setText("");
         txtNewCustEmail.setText("");
         cmbNewCustType.setSelectedItem(0);
-        chkCreditFacAccepted.setSelected(false);
-        txtNewCustCreditLimit.setText("");
         numbers = new ArrayList<>();
         details = new ArrayList<>();
         pnlAddTP.removeAll();
         btnAddTP.doClick();
     }//GEN-LAST:event_btnNewCustCreateActionPerformed
 
-    private void txtNewCustAddStrtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNewCustAddStrtActionPerformed
+    private void txtNewCustAddCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNewCustAddCityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNewCustAddStrtActionPerformed
+    }//GEN-LAST:event_txtNewCustAddCityActionPerformed
 
     private void txtNewCustAddNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNewCustAddNumActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNewCustAddNumActionPerformed
 
-    private void cmbNewCustTypeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbNewCustTypeItemStateChanged
-        // TODO add your handling code here:
-        if (cmbNewCustType.getSelectedIndex() > 1) {
-            chkCreditFacAccepted.setEnabled(true);
-        } else {
-            chkCreditFacAccepted.setEnabled(false);
-        }
-    }//GEN-LAST:event_cmbNewCustTypeItemStateChanged
-
     private void cmbNewCustTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbNewCustTypeActionPerformed
         // TODO add your handling code here:
+        String item = (String)(((JComboBox)evt.getSource()).getSelectedItem());
+        switch(item){
+            case "Large Order":
+                addLargeOrder();
+                break;
+            case "Walk-In VIP":
+                addWalkInVIP();
+                break;
+        }
     }//GEN-LAST:event_cmbNewCustTypeActionPerformed
 
     private void btnNewCustCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewCustCancelActionPerformed
         // TODO add your handling code here:
-        txtNewCustID.setText("");
-        txtNewCustName.setText("");
-        txtNewCustAddCity.setText("");
-        txtNewCustAddStrt.setText("");
-        txtNewCustAddNum.setText("");
-        txtNewCustEmail.setText("");
-        cmbNewCustType.setSelectedItem(0);
-        cmbNewCustType.setSelectedIndex(0);
         ManagerView.jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_btnNewCustCancelActionPerformed
 
@@ -406,34 +362,23 @@ public class CustNew extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnAddTPActionPerformed
 
-    private void chkCreditFacAcceptedItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chkCreditFacAcceptedItemStateChanged
+    private void txtNewCustLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNewCustLastNameActionPerformed
         // TODO add your handling code here:
-        if (chkCreditFacAccepted.isSelected()) {
-            txtNewCustCreditLimit.setEditable(true);
-        } else {
-            txtNewCustCreditLimit.setEditable(false);
-        }
-    }//GEN-LAST:event_chkCreditFacAcceptedItemStateChanged
+    }//GEN-LAST:event_txtNewCustLastNameActionPerformed
 
-    private void txtNewCustName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNewCustName1ActionPerformed
+    private void txtNewCustLastNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNewCustLastNameFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNewCustName1ActionPerformed
-
-    private void txtNewCustName1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNewCustName1FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNewCustName1FocusGained
+    }//GEN-LAST:event_txtNewCustLastNameFocusGained
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton btnAddTP;
     private javax.swing.JButton btnNewCustCancel;
     private javax.swing.JButton btnNewCustCreate;
-    private javax.swing.JCheckBox chkCreditFacAccepted;
     private javax.swing.JComboBox cmbNewCustType;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
@@ -442,15 +387,44 @@ public class CustNew extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JLabel jTxtAddNum;
     private javax.swing.JPanel pnlAddTP;
+    private javax.swing.JPanel pnlCustType;
     private javax.swing.JTextField txtNewCustAddCity;
     private javax.swing.JTextField txtNewCustAddNum;
     private javax.swing.JTextField txtNewCustAddStrt;
-    private javax.swing.JTextField txtNewCustCreditLimit;
     private javax.swing.JTextField txtNewCustEmail;
     private javax.swing.JTextField txtNewCustID;
+    private javax.swing.JTextField txtNewCustLastName;
     private javax.swing.JTextField txtNewCustName;
-    private javax.swing.JTextField txtNewCustName1;
     // End of variables declaration//GEN-END:variables
     ArrayList<Object> details = new ArrayList<>();
     ArrayList<Object> numbers = new ArrayList<>();
+
+    private void addWalkInVIP() {
+        JCheckBox credit = new JCheckBox("Credit Facility Accepted.");
+        JLabel creditAm = new JLabel("Credit Limit");
+        JTextField creditAmt = new JTextField("");
+        creditAmt.setSize(creditAm.getSize());
+        pnlCustType.removeAll();
+        pnlCustType.add(credit);
+        pnlCustType.add(creditAm);
+        pnlCustType.add(creditAmt);
+        pnlCustType.revalidate();
+        validate();
+    }
+
+    private void addLargeOrder() {
+        JCheckBox credit = new JCheckBox("Credit Facility Accepted.");
+        JLabel creditAm = new JLabel("Credit Limit");
+        JTextField creditAmt = new JTextField("");
+        JLabel rep = new JLabel("Assigned Sales Representative");
+        JComboBox reps = new JComboBox(/*ManagerController.getReps()*/);
+        pnlCustType.removeAll();
+        pnlCustType.add(credit);
+        pnlCustType.add(creditAm);
+        pnlCustType.add(creditAmt);
+        pnlCustType.add(rep);
+        pnlCustType.add(reps);
+        pnlCustType.revalidate();
+        validate();
+    }
 }

@@ -21,6 +21,7 @@ public class SupNew extends javax.swing.JPanel {
      */
     public SupNew() {
         initComponents();
+        btnAddTPSup.doClick();
     }
 
     /**
@@ -79,11 +80,6 @@ public class SupNew extends javax.swing.JPanel {
             }
         });
 
-        txtNewSupName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNewSupNameActionPerformed(evt);
-            }
-        });
         txtNewSupName.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtNewSupNameFocusGained(evt);
@@ -182,16 +178,11 @@ public class SupNew extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 11, Short.MAX_VALUE))
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -221,13 +212,10 @@ public class SupNew extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnAddTPSupActionPerformed
 
-    private void txtNewSupNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNewSupNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNewSupNameActionPerformed
-
     private void txtNewSupNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNewSupNameFocusGained
         // TODO add your handling code here:
-        txtNewSupID.setText(ManagerController.getNewSupplierID());
+        String id = ManagerController.getNewSupplierID();
+        txtNewSupID.setText("SU" + id + ControllLayer.ParityCheck.getKey(id));
     }//GEN-LAST:event_txtNewSupNameFocusGained
 
     private void btnNewSupCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewSupCreateActionPerformed

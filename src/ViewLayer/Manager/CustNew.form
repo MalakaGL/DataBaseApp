@@ -55,14 +55,10 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="btnNewCustCreate" min="-2" pref="79" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="btnNewCustCancel" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="pnlCustType" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jTxtAddNum" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -72,7 +68,6 @@
                                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="txtNewCustEmail" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="btnAddTP" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="pnlAddTP" alignment="1" max="32767" attributes="0"/>
                                           <Group type="102" alignment="1" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
@@ -80,40 +75,40 @@
                                                   <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace pref="37" max="32767" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="txtNewCustAddStrt" alignment="0" pref="251" max="32767" attributes="0"/>
+                                                  <Component id="txtNewCustAddCity" alignment="0" pref="251" max="32767" attributes="0"/>
                                                   <Component id="txtNewCustAddNum" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="txtNewCustAddCity" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="txtNewCustAddStrt" alignment="0" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="btnAddTP" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                              <Component id="btnNewCustCreate" min="-2" pref="79" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="btnNewCustCancel" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                                      <Component id="cmbNewCustType" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="cmbNewCustType" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtNewCustCreditLimit" alignment="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtNewCustID" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
+                                      <Component id="txtNewCustName" alignment="0" pref="325" max="32767" attributes="0"/>
+                                      <Component id="txtNewCustLastName" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                              </Group>
-                          </Group>
-                          <Component id="chkCreditFacAccepted" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtNewCustID" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
-                                  <Component id="txtNewCustName" alignment="0" pref="325" max="32767" attributes="0"/>
-                                  <Component id="txtNewCustName1" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -137,7 +132,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNewCustName1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNewCustLastName" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -148,12 +143,12 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNewCustAddCity" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNewCustAddStrt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNewCustAddStrt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNewCustAddCity" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -172,19 +167,14 @@
                           <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cmbNewCustType" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                      <Component id="chkCreditFacAccepted" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel35" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNewCustCreditLimit" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="pnlCustType" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnNewCustCancel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnNewCustCreate" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="107" max="32767" attributes="0"/>
+                      <EmptySpace pref="138" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -192,11 +182,10 @@
           <SubComponents>
             <Component class="javax.swing.JTextField" name="txtNewCustName">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNewCustNameActionPerformed"/>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtNewCustNameFocusGained"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNewCustAddCity">
+            <Component class="javax.swing.JTextField" name="txtNewCustAddStrt">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel34">
               <Properties>
@@ -236,9 +225,9 @@
                 <Property name="text" type="java.lang.String" value="Customer ID"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNewCustAddStrt">
+            <Component class="javax.swing.JTextField" name="txtNewCustAddCity">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNewCustAddStrtActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNewCustAddCityActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNewCustEmail">
@@ -254,6 +243,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNewCustAddNum">
+              <AccessibilityProperties>
+                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+              </AccessibilityProperties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNewCustAddNumActionPerformed"/>
               </Events>
@@ -280,7 +272,6 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cmbNewCustTypeItemStateChanged"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbNewCustTypeActionPerformed"/>
               </Events>
             </Component>
@@ -310,36 +301,24 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel35">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Credit Limit"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtNewCustCreditLimit">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="chkCreditFacAccepted">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Credit Facility Accepted"/>
-                <Property name="enabled" type="boolean" value="false"/>
-              </Properties>
-              <Events>
-                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="chkCreditFacAcceptedItemStateChanged"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel44">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Last Name"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNewCustName1">
+            <Component class="javax.swing.JTextField" name="txtNewCustLastName">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNewCustName1ActionPerformed"/>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtNewCustName1FocusGained"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNewCustLastNameActionPerformed"/>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtNewCustLastNameFocusGained"/>
               </Events>
             </Component>
+            <Container class="javax.swing.JPanel" name="pnlCustType">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel(new GridLayout(0,1))"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+            </Container>
           </SubComponents>
         </Container>
       </SubComponents>
