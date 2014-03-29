@@ -5,16 +5,12 @@
 package ViewLayer.Manager;
 
 import ControllLayer.Controller;
-import ControllLayer.Manager.ManagerController;
 import ViewLayer.Cashier.CashierView;
 import com.alee.laf.WebLookAndFeel;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import javax.swing.JTable;
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import onestopshop.LogIn;
 
 /**
@@ -46,48 +42,50 @@ public class ManagerView extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         pnlHome = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        lblLoginData = new javax.swing.JLabel();
         btnHomeCustomers = new javax.swing.JButton();
         btnHomeSuppliers = new javax.swing.JButton();
         btnHomeStock = new javax.swing.JButton();
         btnHomeRep = new javax.swing.JButton();
         btnHomeOrders = new javax.swing.JButton();
-        btnHomeLogOut = new javax.swing.JButton();
         btnHomeUserAcco = new javax.swing.JButton();
         pnlCustomers = new javax.swing.JPanel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        pnlFindCust = new javax.swing.JPanel();
-        pnlNewCustomer = new javax.swing.JPanel();
+        jTabbedPane8 = new javax.swing.JTabbedPane();
+        pnlSearchCust = new javax.swing.JPanel();
         pnlEditCust = new javax.swing.JPanel();
+        pnlNewCust = new javax.swing.JPanel();
         pnlSuppliers = new javax.swing.JPanel();
         jTabbedPane4 = new javax.swing.JTabbedPane();
-        pnlFindSup = new javax.swing.JPanel();
+        pnlSearchSup = new javax.swing.JPanel();
         pnlEditSup = new javax.swing.JPanel();
         pnlNewSup = new javax.swing.JPanel();
         pnlSalesReps = new javax.swing.JPanel();
         jTabbedPane6 = new javax.swing.JTabbedPane();
-        pnlFindCust1 = new javax.swing.JPanel();
-        pnlNewSalesRep = new javax.swing.JPanel();
-        pnlEditCust1 = new javax.swing.JPanel();
+        pnlSearchRep = new javax.swing.JPanel();
+        pnlEditRep = new javax.swing.JPanel();
+        pnlNewRep = new javax.swing.JPanel();
         pnlStock = new javax.swing.JPanel();
         jTabbedPane5 = new javax.swing.JTabbedPane();
-        pnlFindItem = new javax.swing.JPanel();
+        pnlSearchItem = new javax.swing.JPanel();
+        pnlEditItem = new javax.swing.JPanel();
+        pnlNewItem = new javax.swing.JPanel();
         jTabbedPane7 = new javax.swing.JTabbedPane();
-        pnlFindOrder1 = new javax.swing.JPanel();
-        pnlEditOrder1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        pnlSearchUser = new javax.swing.JPanel();
+        pnlEditUser = new javax.swing.JPanel();
+        pnlNewUser = new javax.swing.JPanel();
         pnlOrders = new javax.swing.JPanel();
         jTabbedPane3 = new javax.swing.JTabbedPane();
-        pnlFindOrder = new javax.swing.JPanel();
-        pnlNewOrder = new javax.swing.JPanel();
-        pnlNewOrder1 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        pnlSearchOrder = new javax.swing.JPanel();
         pnlEditOrder = new javax.swing.JPanel();
+        pnlNewOrder = new javax.swing.JPanel();
+        pnlProcessOrder = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane11 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        lblLoginData = new javax.swing.JLabel();
+        btnHomeLogOut = new javax.swing.JButton();
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -104,6 +102,11 @@ public class ManagerView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("One-Stop-Shop");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -126,9 +129,6 @@ public class ManagerView extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Manager/logo.png"))); // NOI18N
         jLabel8.setText("One-Stop-Shop");
-
-        String str = "You are logged in as " + Controller.getCurrentUser();
-        lblLoginData.setText(str);
 
         btnHomeCustomers.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnHomeCustomers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Manager/Customer.png"))); // NOI18N
@@ -176,13 +176,6 @@ public class ManagerView extends javax.swing.JFrame {
             }
         });
 
-        btnHomeLogOut.setText("Log Out");
-        btnHomeLogOut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHomeLogOutActionPerformed(evt);
-            }
-        });
-
         btnHomeUserAcco.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         btnHomeUserAcco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Manager/customerservice.png"))); // NOI18N
         btnHomeUserAcco.setText("User Accounts");
@@ -200,26 +193,15 @@ public class ManagerView extends javax.swing.JFrame {
             .addGroup(pnlHomeLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHomeLayout.createSequentialGroup()
-                        .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlHomeLayout.createSequentialGroup()
-                                .addComponent(btnHomeRep, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
-                                .addGap(169, 169, 169)
-                                .addComponent(btnHomeUserAcco, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
-                            .addGroup(pnlHomeLayout.createSequentialGroup()
-                                .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnHomeCustomers, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
-                                    .addComponent(btnHomeSuppliers, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
-                                .addGap(169, 169, 169)
-                                .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnHomeOrders, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
-                                    .addComponent(btnHomeStock, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))))
-                        .addGap(18, 18, 18))
-                    .addGroup(pnlHomeLayout.createSequentialGroup()
-                        .addComponent(lblLoginData, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnHomeLogOut)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(btnHomeRep, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                    .addComponent(btnHomeSuppliers, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                    .addComponent(btnHomeCustomers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(96, 96, 96)
+                .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnHomeOrders, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                    .addComponent(btnHomeStock, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                    .addComponent(btnHomeUserAcco, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
         pnlHomeLayout.setVerticalGroup(
             pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -228,335 +210,137 @@ public class ManagerView extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addGroup(pnlHomeLayout.createSequentialGroup()
-                        .addComponent(btnHomeStock, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
+                        .addComponent(btnHomeStock, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnHomeOrders, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
+                        .addComponent(btnHomeOrders, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                         .addGap(11, 11, 11)
-                        .addComponent(btnHomeUserAcco, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE))
+                        .addComponent(btnHomeUserAcco, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
                     .addGroup(pnlHomeLayout.createSequentialGroup()
-                        .addComponent(btnHomeCustomers, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
+                        .addComponent(btnHomeCustomers, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnHomeSuppliers, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                        .addComponent(btnHomeSuppliers, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                         .addGap(11, 11, 11)
-                        .addComponent(btnHomeRep, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)))
-                .addGap(92, 92, 92)
-                .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblLoginData, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnHomeLogOut))
-                .addContainerGap())
+                        .addComponent(btnHomeRep, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
+                .addGap(64, 64, 64))
         );
 
         jTabbedPane1.addTab("Home", pnlHome);
 
-        jTabbedPane2.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jTabbedPane2StateChanged(evt);
-            }
-        });
+        pnlCustomers.setLayout(new java.awt.CardLayout());
 
-        javax.swing.GroupLayout pnlFindCustLayout = new javax.swing.GroupLayout(pnlFindCust);
-        pnlFindCust.setLayout(pnlFindCustLayout);
-        pnlFindCustLayout.setHorizontalGroup(
-            pnlFindCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 644, Short.MAX_VALUE)
-        );
-        pnlFindCustLayout.setVerticalGroup(
-            pnlFindCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 418, Short.MAX_VALUE)
-        );
+        pnlSearchCust.setLayout(new java.awt.CardLayout());
+        jTabbedPane8.addTab("Search Customer", pnlSearchCust);
 
-        jTabbedPane2.addTab("Search Customer", pnlFindCust);
+        pnlEditCust.setLayout(new java.awt.CardLayout());
+        jTabbedPane8.addTab("Edit Customer", pnlEditCust);
 
-        javax.swing.GroupLayout pnlNewCustomerLayout = new javax.swing.GroupLayout(pnlNewCustomer);
-        pnlNewCustomer.setLayout(pnlNewCustomerLayout);
-        pnlNewCustomerLayout.setHorizontalGroup(
-            pnlNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 644, Short.MAX_VALUE)
-        );
-        pnlNewCustomerLayout.setVerticalGroup(
-            pnlNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 418, Short.MAX_VALUE)
-        );
+        pnlNewCust.setLayout(new java.awt.CardLayout());
+        jTabbedPane8.addTab("New Customer", pnlNewCust);
 
-        jTabbedPane2.addTab("Add New Customer", pnlNewCustomer);
-
-        javax.swing.GroupLayout pnlEditCustLayout = new javax.swing.GroupLayout(pnlEditCust);
-        pnlEditCust.setLayout(pnlEditCustLayout);
-        pnlEditCustLayout.setHorizontalGroup(
-            pnlEditCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 644, Short.MAX_VALUE)
-        );
-        pnlEditCustLayout.setVerticalGroup(
-            pnlEditCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 418, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("Edit Customer Details", pnlEditCust);
-
-        javax.swing.GroupLayout pnlCustomersLayout = new javax.swing.GroupLayout(pnlCustomers);
-        pnlCustomers.setLayout(pnlCustomersLayout);
-        pnlCustomersLayout.setHorizontalGroup(
-            pnlCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomersLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane2)
-                .addContainerGap())
-        );
-        pnlCustomersLayout.setVerticalGroup(
-            pnlCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomersLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane2)
-                .addContainerGap())
-        );
+        pnlCustomers.add(jTabbedPane8, "card2");
 
         jTabbedPane1.addTab("Customers", pnlCustomers);
 
-        javax.swing.GroupLayout pnlFindSupLayout = new javax.swing.GroupLayout(pnlFindSup);
-        pnlFindSup.setLayout(pnlFindSupLayout);
-        pnlFindSupLayout.setHorizontalGroup(
-            pnlFindSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 664, Short.MAX_VALUE)
-        );
-        pnlFindSupLayout.setVerticalGroup(
-            pnlFindSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
+        pnlSearchSup.setLayout(new java.awt.CardLayout());
+        jTabbedPane4.addTab("Search Supplier", pnlSearchSup);
 
-        jTabbedPane4.addTab("Find Supplier", pnlFindSup);
-
-        javax.swing.GroupLayout pnlEditSupLayout = new javax.swing.GroupLayout(pnlEditSup);
-        pnlEditSup.setLayout(pnlEditSupLayout);
-        pnlEditSupLayout.setHorizontalGroup(
-            pnlEditSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 664, Short.MAX_VALUE)
-        );
-        pnlEditSupLayout.setVerticalGroup(
-            pnlEditSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
-
+        pnlEditSup.setLayout(new java.awt.CardLayout());
         jTabbedPane4.addTab("Edit Supplier", pnlEditSup);
 
-        javax.swing.GroupLayout pnlNewSupLayout = new javax.swing.GroupLayout(pnlNewSup);
-        pnlNewSup.setLayout(pnlNewSupLayout);
-        pnlNewSupLayout.setHorizontalGroup(
-            pnlNewSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 664, Short.MAX_VALUE)
-        );
-        pnlNewSupLayout.setVerticalGroup(
-            pnlNewSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
-
+        pnlNewSup.setLayout(new java.awt.CardLayout());
         jTabbedPane4.addTab("New Supplier", pnlNewSup);
 
         javax.swing.GroupLayout pnlSuppliersLayout = new javax.swing.GroupLayout(pnlSuppliers);
         pnlSuppliers.setLayout(pnlSuppliersLayout);
         pnlSuppliersLayout.setHorizontalGroup(
             pnlSuppliersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane4)
+            .addComponent(jTabbedPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 604, Short.MAX_VALUE)
         );
         pnlSuppliersLayout.setVerticalGroup(
             pnlSuppliersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane4)
+            .addComponent(jTabbedPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Suppliers", pnlSuppliers);
 
-        javax.swing.GroupLayout pnlFindCust1Layout = new javax.swing.GroupLayout(pnlFindCust1);
-        pnlFindCust1.setLayout(pnlFindCust1Layout);
-        pnlFindCust1Layout.setHorizontalGroup(
-            pnlFindCust1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 664, Short.MAX_VALUE)
-        );
-        pnlFindCust1Layout.setVerticalGroup(
-            pnlFindCust1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
+        pnlSearchRep.setLayout(new java.awt.CardLayout());
+        jTabbedPane6.addTab("Search Sales Rep", pnlSearchRep);
 
-        jTabbedPane6.addTab("Find Sales Rep", pnlFindCust1);
+        pnlEditRep.setLayout(new java.awt.CardLayout());
+        jTabbedPane6.addTab("Edit Sales Rep Details", pnlEditRep);
 
-        javax.swing.GroupLayout pnlNewSalesRepLayout = new javax.swing.GroupLayout(pnlNewSalesRep);
-        pnlNewSalesRep.setLayout(pnlNewSalesRepLayout);
-        pnlNewSalesRepLayout.setHorizontalGroup(
-            pnlNewSalesRepLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 664, Short.MAX_VALUE)
-        );
-        pnlNewSalesRepLayout.setVerticalGroup(
-            pnlNewSalesRepLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
-
-        jTabbedPane6.addTab("New Sales Rep", pnlNewSalesRep);
-
-        javax.swing.GroupLayout pnlEditCust1Layout = new javax.swing.GroupLayout(pnlEditCust1);
-        pnlEditCust1.setLayout(pnlEditCust1Layout);
-        pnlEditCust1Layout.setHorizontalGroup(
-            pnlEditCust1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 664, Short.MAX_VALUE)
-        );
-        pnlEditCust1Layout.setVerticalGroup(
-            pnlEditCust1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
-
-        jTabbedPane6.addTab("Edit Sales Rep Details", pnlEditCust1);
+        pnlNewRep.setLayout(new java.awt.CardLayout());
+        jTabbedPane6.addTab("New Sales Rep", pnlNewRep);
 
         javax.swing.GroupLayout pnlSalesRepsLayout = new javax.swing.GroupLayout(pnlSalesReps);
         pnlSalesReps.setLayout(pnlSalesRepsLayout);
         pnlSalesRepsLayout.setHorizontalGroup(
             pnlSalesRepsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE)
+            .addComponent(jTabbedPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 604, Short.MAX_VALUE)
         );
         pnlSalesRepsLayout.setVerticalGroup(
             pnlSalesRepsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
+            .addComponent(jTabbedPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Sales Reps", pnlSalesReps);
 
-        javax.swing.GroupLayout pnlFindItemLayout = new javax.swing.GroupLayout(pnlFindItem);
-        pnlFindItem.setLayout(pnlFindItemLayout);
-        pnlFindItemLayout.setHorizontalGroup(
-            pnlFindItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 664, Short.MAX_VALUE)
-        );
-        pnlFindItemLayout.setVerticalGroup(
-            pnlFindItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
+        pnlSearchItem.setLayout(new java.awt.CardLayout());
+        jTabbedPane5.addTab("Search Item", pnlSearchItem);
 
-        jTabbedPane5.addTab("Search Item", pnlFindItem);
+        pnlEditItem.setLayout(new java.awt.CardLayout());
+        jTabbedPane5.addTab("Edit Item Details", pnlEditItem);
+
+        pnlNewItem.setLayout(new java.awt.CardLayout());
+        jTabbedPane5.addTab("New Item Details", pnlNewItem);
 
         javax.swing.GroupLayout pnlStockLayout = new javax.swing.GroupLayout(pnlStock);
         pnlStock.setLayout(pnlStockLayout);
         pnlStockLayout.setHorizontalGroup(
             pnlStockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane5)
+            .addComponent(jTabbedPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 604, Short.MAX_VALUE)
         );
         pnlStockLayout.setVerticalGroup(
             pnlStockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane5)
+            .addComponent(jTabbedPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Stock", pnlStock);
 
-        javax.swing.GroupLayout pnlFindOrder1Layout = new javax.swing.GroupLayout(pnlFindOrder1);
-        pnlFindOrder1.setLayout(pnlFindOrder1Layout);
-        pnlFindOrder1Layout.setHorizontalGroup(
-            pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 664, Short.MAX_VALUE)
-        );
-        pnlFindOrder1Layout.setVerticalGroup(
-            pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
+        pnlSearchUser.setLayout(new java.awt.CardLayout());
+        jTabbedPane7.addTab("Search User", pnlSearchUser);
 
-        jTabbedPane7.addTab("Create User", pnlFindOrder1);
+        pnlEditUser.setLayout(new java.awt.CardLayout());
+        jTabbedPane7.addTab("Edit User", pnlEditUser);
 
-        javax.swing.GroupLayout pnlEditOrder1Layout = new javax.swing.GroupLayout(pnlEditOrder1);
-        pnlEditOrder1.setLayout(pnlEditOrder1Layout);
-        pnlEditOrder1Layout.setHorizontalGroup(
-            pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 664, Short.MAX_VALUE)
-        );
-        pnlEditOrder1Layout.setVerticalGroup(
-            pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
-
-        jTabbedPane7.addTab("Edit User", pnlEditOrder1);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 664, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
-
-        jTabbedPane7.addTab("Search User", jPanel2);
+        pnlNewUser.setLayout(new java.awt.CardLayout());
+        jTabbedPane7.addTab("Create User", pnlNewUser);
 
         jTabbedPane1.addTab("User Account", jTabbedPane7);
 
-        javax.swing.GroupLayout pnlFindOrderLayout = new javax.swing.GroupLayout(pnlFindOrder);
-        pnlFindOrder.setLayout(pnlFindOrderLayout);
-        pnlFindOrderLayout.setHorizontalGroup(
-            pnlFindOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 664, Short.MAX_VALUE)
-        );
-        pnlFindOrderLayout.setVerticalGroup(
-            pnlFindOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
-        );
+        pnlSearchOrder.setLayout(new java.awt.CardLayout());
+        jTabbedPane3.addTab("Search Order", pnlSearchOrder);
 
-        jTabbedPane3.addTab("Find Order", pnlFindOrder);
+        pnlEditOrder.setLayout(new java.awt.CardLayout());
+        jTabbedPane3.addTab("Edit Order", pnlEditOrder);
 
-        javax.swing.GroupLayout pnlNewOrderLayout = new javax.swing.GroupLayout(pnlNewOrder);
-        pnlNewOrder.setLayout(pnlNewOrderLayout);
-        pnlNewOrderLayout.setHorizontalGroup(
-            pnlNewOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 664, Short.MAX_VALUE)
-        );
-        pnlNewOrderLayout.setVerticalGroup(
-            pnlNewOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
-        );
-
+        pnlNewOrder.setLayout(new java.awt.CardLayout());
         jTabbedPane3.addTab("New Order", pnlNewOrder);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 664, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout pnlNewOrder1Layout = new javax.swing.GroupLayout(pnlNewOrder1);
-        pnlNewOrder1.setLayout(pnlNewOrder1Layout);
-        pnlNewOrder1Layout.setHorizontalGroup(
-            pnlNewOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        pnlNewOrder1Layout.setVerticalGroup(
-            pnlNewOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jTabbedPane3.addTab("Process Order", pnlNewOrder1);
-
-        javax.swing.GroupLayout pnlEditOrderLayout = new javax.swing.GroupLayout(pnlEditOrder);
-        pnlEditOrder.setLayout(pnlEditOrderLayout);
-        pnlEditOrderLayout.setHorizontalGroup(
-            pnlEditOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 664, Short.MAX_VALUE)
-        );
-        pnlEditOrderLayout.setVerticalGroup(
-            pnlEditOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
-        );
-
-        jTabbedPane3.addTab("Edit Order", pnlEditOrder);
+        pnlProcessOrder.setLayout(new java.awt.CardLayout());
+        jTabbedPane3.addTab("Process Order", pnlProcessOrder);
 
         javax.swing.GroupLayout pnlOrdersLayout = new javax.swing.GroupLayout(pnlOrders);
         pnlOrders.setLayout(pnlOrdersLayout);
         pnlOrdersLayout.setHorizontalGroup(
             pnlOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane3)
+            .addComponent(jTabbedPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 604, Short.MAX_VALUE)
         );
         pnlOrdersLayout.setVerticalGroup(
             pnlOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlOrdersLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane3))
+                .addComponent(jTabbedPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Orders", pnlOrders);
@@ -598,22 +382,53 @@ public class ManagerView extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(59, 59, 59)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(83, Short.MAX_VALUE)
                 .addComponent(jButton2)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(66, 66, 66))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        String str = "You are logged in as " + Controller.getCurrentUser();
+        lblLoginData.setText(str);
+
+        btnHomeLogOut.setText("Log Out");
+        btnHomeLogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeLogOutActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(4, 4, 4)
+                .addComponent(lblLoginData, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(btnHomeLogOut)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblLoginData, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHomeLogOut))
+                .addGap(0, 15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -621,42 +436,42 @@ public class ManagerView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jTabbedPane1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTabbedPane1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(0, 0, 0))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnHomeStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeStockActionPerformed
-        // TODO add your handling code here:
-        jTabbedPane1.setSelectedIndex(4);
-    }//GEN-LAST:event_btnHomeStockActionPerformed
+    private void btnHomeCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeCustomersActionPerformed
+        jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_btnHomeCustomersActionPerformed
 
     private void btnHomeRepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeRepActionPerformed
         // TODO add your handling code here:
         jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_btnHomeRepActionPerformed
 
-    private void btnHomeCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeCustomersActionPerformed
+    private void btnHomeUserAccoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeUserAccoActionPerformed
         // TODO add your handling code here:
-        jTabbedPane1.setSelectedIndex(1);
-    }//GEN-LAST:event_btnHomeCustomersActionPerformed
+        jTabbedPane1.setSelectedIndex(5);
+    }//GEN-LAST:event_btnHomeUserAccoActionPerformed
 
     private void btnHomeSuppliersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeSuppliersActionPerformed
         // TODO add your handling code here:
@@ -669,50 +484,157 @@ public class ManagerView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHomeOrdersActionPerformed
 
     private void btnHomeLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeLogOutActionPerformed
-        // TODO add your handling code here:   
+        // TODO add your handling code here:
         this.dispose();
         LogIn logIn = new LogIn();
         logIn.setVisible(true);
     }//GEN-LAST:event_btnHomeLogOutActionPerformed
 
-    private void btnHomeUserAccoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeUserAccoActionPerformed
+    private void btnHomeStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeStockActionPerformed
         // TODO add your handling code here:
-        jTabbedPane1.setSelectedIndex(5);
-    }//GEN-LAST:event_btnHomeUserAccoActionPerformed
+        jTabbedPane1.setSelectedIndex(4);
+    }//GEN-LAST:event_btnHomeStockActionPerformed
+
+    private void jTabbedPane1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1PropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTabbedPane1PropertyChange
+
+    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
+        // TODO add your handling code here:
+        JTabbedPane sourceTabbedPane = (JTabbedPane) evt.getSource();
+        JPanel temp;
+        switch (sourceTabbedPane.getSelectedIndex()) {
+            case 1:
+                temp = new CustSearch();
+                pnlSearchCust.removeAll();
+                pnlSearchCust.add(temp);
+                pnlSearchCust.validate();
+                pnlSearchCust.repaint();
+
+                temp = new CustEdit();
+                pnlEditCust.removeAll();
+                pnlEditCust.add(temp);
+                pnlEditCust.validate();
+                pnlEditCust.repaint();
+
+                temp = new CustNew();
+                pnlNewCust.removeAll();
+                pnlNewCust.add(temp);
+                pnlNewCust.validate();
+                pnlNewCust.repaint();
+                break;
+            case 2:
+                temp = new SupNew();
+                pnlNewSup.removeAll();
+                pnlNewSup.add(temp);
+                pnlNewSup.validate();
+                pnlNewSup.repaint();
+
+                temp = new SupEdit();
+                pnlEditSup.removeAll();
+                pnlEditSup.add(temp);
+                pnlEditSup.validate();
+                pnlEditSup.repaint();
+
+                temp = new SupFind();
+                pnlSearchSup.removeAll();
+                pnlSearchSup.add(temp);
+                pnlSearchSup.validate();
+                pnlSearchSup.repaint();
+                break;
+            case 3:
+                temp = new RepNew();
+                pnlNewRep.removeAll();
+                pnlNewRep.add(temp);
+                pnlNewRep.validate();
+                pnlNewRep.repaint();
+
+                temp = new RepEdit();
+                pnlEditRep.removeAll();
+                pnlEditRep.add(temp);
+                pnlEditRep.validate();
+                pnlEditRep.repaint();
+
+                temp = new RepFind();
+                pnlSearchRep.removeAll();
+                pnlSearchRep.add(temp);
+                pnlSearchRep.validate();
+                pnlSearchRep.repaint();
+                break;
+            case 4:
+                temp = new ItemNew();
+                pnlNewItem.removeAll();
+                pnlNewItem.add(temp);
+                pnlNewItem.validate();
+                pnlNewItem.repaint();
+
+                temp = new ItemSearch();
+                pnlSearchItem.removeAll();
+                pnlSearchItem.add(temp);
+                pnlSearchItem.validate();
+                pnlSearchItem.repaint();
+
+                temp = new ItemEdit();
+                pnlEditItem.removeAll();
+                pnlEditItem.add(temp);
+                pnlEditItem.validate();
+                pnlEditItem.repaint();
+                break;
+            case 5:
+                temp = new UserEdit();
+                pnlEditUser.removeAll();
+                pnlEditUser.add(temp);
+                pnlEditUser.validate();
+                pnlEditUser.repaint();
+
+                temp = new UserNew();
+                pnlNewUser.removeAll();
+                pnlNewUser.add(temp);
+                pnlNewUser.validate();
+                pnlNewUser.repaint();
+
+                temp = new UserSearch();
+                pnlSearchUser.removeAll();
+                pnlSearchUser.add(temp);
+                pnlSearchUser.validate();
+                pnlSearchUser.repaint();
+                break;
+            case 6:
+                temp = new OrderNew();
+                pnlNewOrder.removeAll();
+                pnlNewOrder.add(temp);
+                pnlNewOrder.validate();
+                pnlNewOrder.repaint();
+
+                temp = new OrderEdit();
+                pnlEditOrder.removeAll();
+                pnlEditOrder.add(temp);
+                pnlEditOrder.validate();
+                pnlEditOrder.repaint();
+
+                temp = new OrderSearch();
+                pnlSearchOrder.removeAll();
+                pnlSearchOrder.add(temp);
+                pnlSearchOrder.validate();
+                pnlSearchOrder.repaint();
+                
+                temp = new OrderProcess();
+                pnlProcessOrder.removeAll();
+                pnlProcessOrder.add(temp);
+                pnlProcessOrder.validate();
+                pnlProcessOrder.repaint();
+                break;
+        }
+    }//GEN-LAST:event_jTabbedPane1StateChanged
 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
-    private void jTabbedPane2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane2StateChanged
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        switch (((JTabbedPane) evt.getSource()).getSelectedIndex()) {
-            case 0:
-                details = new ArrayList<>();
-        }
-    }//GEN-LAST:event_jTabbedPane2StateChanged
-
-    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
-        // TODO add your handling code here:
-        JTabbedPane sourceTabbedPane = (JTabbedPane) evt.getSource();
-        numbers = new ArrayList<>();
-        switch (sourceTabbedPane.getSelectedIndex()) {
-            case 1:
-//                CustNew.btnAddTP.doClick();
-                break;
-            case 2:
-//                SupNew.btnAddTPSup.doClick();
-                break;
-            case 3:
-//                RepNew.btnAddTPSRep.doClick();
-            case 5:
-                users = ManagerController.getUsers();
-        }
-    }//GEN-LAST:event_jTabbedPane1StateChanged
-
-    private void jTabbedPane1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1PropertyChange
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTabbedPane1PropertyChange
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -723,22 +645,22 @@ public class ManagerView extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        
+
         try {
-           /*for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }*/
-            
+            /*for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+             if ("Nimbus".equals(info.getName())) {
+             javax.swing.UIManager.setLookAndFeel(info.getClassName());
+             break;
+             }
+             }*/
+
             // Set System L&F
         /*UIManager.setLookAndFeel(
-            UIManager.getSystemLookAndFeelClassName());*/
-            
+             UIManager.getSystemLookAndFeelClassName());*/
+
             //UIManager.setLookAndFeel("de.javasoft.plaf.synthetica.SyntheticaAluOxideLookAndFeel");
-            UIManager.setLookAndFeel ( WebLookAndFeel.class.getCanonicalName () );
-            
+            UIManager.setLookAndFeel(WebLookAndFeel.class.getCanonicalName());
+
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(CashierView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
@@ -788,47 +710,45 @@ public class ManagerView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     public static javax.swing.JTabbedPane jTabbedPane1;
-    public static javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTabbedPane jTabbedPane6;
     private javax.swing.JTabbedPane jTabbedPane7;
+    private javax.swing.JTabbedPane jTabbedPane8;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JLabel lblLoginData;
     private javax.swing.JPanel pnlCustomers;
     private javax.swing.JPanel pnlEditCust;
-    private javax.swing.JPanel pnlEditCust1;
+    private javax.swing.JPanel pnlEditItem;
     private javax.swing.JPanel pnlEditOrder;
-    private javax.swing.JPanel pnlEditOrder1;
+    private javax.swing.JPanel pnlEditRep;
     private javax.swing.JPanel pnlEditSup;
-    private javax.swing.JPanel pnlFindCust;
-    private javax.swing.JPanel pnlFindCust1;
-    private javax.swing.JPanel pnlFindItem;
-    private javax.swing.JPanel pnlFindOrder;
-    private javax.swing.JPanel pnlFindOrder1;
-    private javax.swing.JPanel pnlFindSup;
+    private javax.swing.JPanel pnlEditUser;
     private javax.swing.JPanel pnlHome;
-    private javax.swing.JPanel pnlNewCustomer;
+    private javax.swing.JPanel pnlNewCust;
+    private javax.swing.JPanel pnlNewItem;
     private javax.swing.JPanel pnlNewOrder;
-    private javax.swing.JPanel pnlNewOrder1;
-    private javax.swing.JPanel pnlNewSalesRep;
+    private javax.swing.JPanel pnlNewRep;
     private javax.swing.JPanel pnlNewSup;
+    private javax.swing.JPanel pnlNewUser;
     private javax.swing.JPanel pnlOrders;
+    private javax.swing.JPanel pnlProcessOrder;
     private javax.swing.JPanel pnlSalesReps;
+    private javax.swing.JPanel pnlSearchCust;
+    private javax.swing.JPanel pnlSearchItem;
+    private javax.swing.JPanel pnlSearchOrder;
+    private javax.swing.JPanel pnlSearchRep;
+    private javax.swing.JPanel pnlSearchSup;
+    private javax.swing.JPanel pnlSearchUser;
     private javax.swing.JPanel pnlStock;
     private javax.swing.JPanel pnlSuppliers;
     // End of variables declaration//GEN-END:variables
-    ArrayList<Object> details = new ArrayList<>();
-    ArrayList<Object> numbers = new ArrayList<>();
-    ArrayList<String> users = new ArrayList<>();
-    JTable current = new JTable();
 
     private void setNotifications() {
     }

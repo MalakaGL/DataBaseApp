@@ -22,6 +22,7 @@ public class CustSearch extends javax.swing.JPanel {
      */
     public CustSearch() {
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -372,8 +373,6 @@ public class CustSearch extends javax.swing.JPanel {
         txtNewCustEmail.setText("");
         cmbNewCustType.setSelectedItem(0);
         cmbNewCustType.setSelectedIndex(0);
-        ManagerView.jTabbedPane2.setSelectedIndex(0);
-        ManagerView.jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_btnNewCustCancelActionPerformed
 
     private void btnAddTPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddTPActionPerformed

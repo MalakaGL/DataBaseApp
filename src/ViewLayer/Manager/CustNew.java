@@ -61,6 +61,10 @@ public class CustNew extends javax.swing.JPanel {
         jLabel44 = new javax.swing.JLabel();
         txtNewCustName1 = new javax.swing.JTextField();
 
+        jScrollPane6.setPreferredSize(new java.awt.Dimension(720, 592));
+
+        jPanel3.setPreferredSize(new java.awt.Dimension(700, 490));
+
         txtNewCustName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNewCustNameActionPerformed(evt);
@@ -214,7 +218,7 @@ public class CustNew extends javax.swing.JPanel {
                             .addComponent(txtNewCustID, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNewCustName, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
                             .addComponent(txtNewCustName1))))
-                .addContainerGap(273, Short.MAX_VALUE))
+                .addContainerGap(243, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,7 +272,7 @@ public class CustNew extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNewCustCancel)
                     .addComponent(btnNewCustCreate))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         jScrollPane6.setViewportView(jPanel3);
@@ -277,11 +281,17 @@ public class CustNew extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane6)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
+                .addGap(11, 11, 11))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -293,13 +303,13 @@ public class CustNew extends javax.swing.JPanel {
         // TODO add your handling code here:
         String id = ManagerController.getNewCustomerID();
         txtNewCustID.setText("CU" + id
-            + ParityCheck.getKey(id));
+                + ParityCheck.getKey(id));
     }//GEN-LAST:event_txtNewCustNameFocusGained
 
     private void btnNewCustCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewCustCreateActionPerformed
         // TODO add your handling code here:
         String id = txtNewCustID.getText();
-        details.add(txtNewCustID.getText().substring(2, id.length()-1));
+        details.add(txtNewCustID.getText().substring(2, id.length() - 1));
         details.add(txtNewCustName.getText());
         details.add(txtNewCustName1.getText());
         details.add(txtNewCustAddStrt.getText());
@@ -308,7 +318,7 @@ public class CustNew extends javax.swing.JPanel {
         details.add(txtNewCustEmail.getText());
         details.add(((String) cmbNewCustType.getSelectedItem()).charAt(0) + "");
         if (chkCreditFacAccepted.isSelected()
-            && !txtNewCustCreditLimit.getText().equals("")) {
+                && !txtNewCustCreditLimit.getText().equals("")) {
             details.add(txtNewCustCreditLimit.getText());
         } else {
             details.add("0");
@@ -319,10 +329,10 @@ public class CustNew extends javax.swing.JPanel {
 
         if (ManagerController.insertCustomer(details) > 0) {
             JOptionPane.showMessageDialog(this, "Customer Inserted "
-                + "Successfully.");
+                    + "Successfully.");
         } else {
             JOptionPane.showMessageDialog(this, "Something went wrong."
-                + "Customer creation was not successful.");
+                    + "Customer creation was not successful.");
         }
 
         txtNewCustID.setText("");
@@ -372,7 +382,6 @@ public class CustNew extends javax.swing.JPanel {
         txtNewCustEmail.setText("");
         cmbNewCustType.setSelectedItem(0);
         cmbNewCustType.setSelectedIndex(0);
-        ManagerView.jTabbedPane2.setSelectedIndex(0);
         ManagerView.jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_btnNewCustCancelActionPerformed
 
@@ -413,7 +422,6 @@ public class CustNew extends javax.swing.JPanel {
     private void txtNewCustName1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNewCustName1FocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNewCustName1FocusGained
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton btnAddTP;
     private javax.swing.JButton btnNewCustCancel;
