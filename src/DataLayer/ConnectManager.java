@@ -25,8 +25,8 @@ public class ConnectManager {
 
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/one_stop_shop", "root", "");
-                    //"jdbc:mysql://localhost:45000/one_stop_shop", "noma", "RoEqnC7b");
+                    //"jdbc:mysql://localhost/one_stop_shop", "root", "");
+                    "jdbc:mysql://localhost:45000/one_stop_shop", "noma", "RoEqnC7b");
             return con;
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ConnectManager.class.getName()).log(Level.SEVERE,
