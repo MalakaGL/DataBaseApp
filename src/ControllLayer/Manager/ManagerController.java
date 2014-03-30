@@ -38,17 +38,7 @@ public class ManagerController {
                     + ParityCheck.getKey(id));
         }
         int t1 = ConnectManager.insertData("Customer", details);
-        if (!((String) detail.get(8)).equals("0")) {
-            details = new String[7];
-            details[0] = (String) detail.get(0);
-            details[1] = (String) detail.get(8);
-            details[2] = (String) detail.get(8);
-            details[3] = null;
-            details[4] = "0";
-            details[5] = "0";
-            details[6] = "0";
-            ConnectManager.insertData("creditfacility", details);
-        }
+        
         details = new String[2];
         for (int i = 9; i < detail.size(); i++) {
             details[0] = (String) detail.get(i);
@@ -67,7 +57,7 @@ public class ManagerController {
             details[i] = (String) detail.get(i);
         }
         String id = ConnectManager.getNextId("Supplier", "SupplierID");
-        if(details[0].equals(id)){
+        if(!details[0].equals(id)){
             ManagerView.showMessage("Suplier ID was changed to SU" + id +
                     ParityCheck.getKey(id));
             details[0] = id;
@@ -91,13 +81,20 @@ public class ManagerController {
         for (int i = 0; i < details.length; i++) {
             details[i] = (String) detail.get(i);
         }
-        int t1 = ConnectManager.insertData("salesrepid", details);
+        String id = ConnectManager.getNextId("Employee", "SalesRepID");
+        if(!details[0].equals(id)){
+            ManagerView.showMessage("SalesRep ID was changed to SR" + id +
+                    ParityCheck.getKey(id));
+            details[0] = id;
+            detail.set(0, id);
+        }
+        int t1 = ConnectManager.insertData("Employee", details);
         details = new String[2];
         for (int i = 3; i < detail.size(); i++) {
             details[0] = (String) detail.get(i);
             details[1] = (String) detail.get(0);
             if (ConnectManager.insertData("EmployeeContact", details) <= 0) {
-                System.out.println("failed insert num");
+                System.out.println("Failed Insert Contact Number");
                 return 0;
             }
         }
@@ -204,7 +201,7 @@ public class ManagerController {
     }
 
     public static String getNewSRepID() {
-        return ConnectManager.getNextId("SalesRepId", "salesrepid");
+        return ConnectManager.getNextId("Employee", "salesrepid");
     }
 
     public static String getNewAccNum() {
@@ -374,11 +371,12 @@ public class ManagerController {
             String result [] = null;
             if(rs.next()){
                 rs.last();
-                result = new String[rs.getRow()];
+                result = new String[rs.getRow() + 1];
                 rs.beforeFirst();
             }
+            result[0] = "";
             while(rs.next()){
-                result[rs.getRow()-1] = rs.getString("FirstName") + "("+
+                result[rs.getRow()] = rs.getString("FirstName") + "("+
                         rs.getString("SalesRepID") + ")";
             }
             return result;
@@ -387,4 +385,24 @@ public class ManagerController {
         }
         return null;
     }   
+
+    public static void insertMailOrder(String id) {
+        String details[] = new String[2];
+        details[0] = id;
+        details[1] = ConnectManager.getNextId("MailOrderCustomer", "TRN");
+        ConnectManager.insertData("MaiOrderCustomer", details);
+    }
+
+    public static void insertLargeOrder(String id, Boolean hasCredit, String rep) {
+        String details [] = new String[4];
+        details[0] = id;
+        if(hasCredit){
+            details[1] = "1";
+        }else{
+            details[1] = "0";
+        }
+        details[2] = ConnectManager.getNextId("LargeOrderCustomer", "BRN");
+        details[3] = rep.substring(rep.length() - 7, rep.length()-1);
+        ConnectManager.insertData("LargeOrderCustomer", details);
+    }
 }
