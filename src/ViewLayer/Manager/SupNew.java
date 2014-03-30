@@ -21,7 +21,6 @@ public class SupNew extends javax.swing.JPanel {
      */
     public SupNew() {
         initComponents();
-        btnAddTPSup.doClick();
     }
 
     /**
@@ -161,15 +160,15 @@ public class SupNew extends javax.swing.JPanel {
                     .addComponent(jLabel24))
                 .addGap(14, 14, 14)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel57)
-                    .addComponent(pnlAddTPSup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pnlAddTPSup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel57))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAddTPSup)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNewSupCreate)
                     .addComponent(btnNewSupCancel))
-                .addContainerGap(291, Short.MAX_VALUE))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
 
         jScrollPane7.setViewportView(jPanel4);
@@ -178,11 +177,11 @@ public class SupNew extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
+            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -220,7 +219,8 @@ public class SupNew extends javax.swing.JPanel {
 
     private void btnNewSupCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewSupCreateActionPerformed
         // TODO add your handling code here:
-        details.add(txtNewSupID.getText());
+        String id = txtNewSupID.getText();
+        details.add(id.substring(2, id.length()-1));
         details.add(txtNewSupName.getText());
         details.add(txtNewSupAddCity.getText());
         details.add(txtNewSupAddStrt.getText());
@@ -231,11 +231,11 @@ public class SupNew extends javax.swing.JPanel {
         }
 
         if (ManagerController.insertSupplier(details) > 0) {
-            JOptionPane.showMessageDialog(this, "Customer Inserted "
+            JOptionPane.showMessageDialog(this, "Supplier Inserted "
                 + "Successfully.");
         } else {
             JOptionPane.showMessageDialog(this, "Something went wrong."
-                + "Customer creation was not successful.");
+                + "Supplier creation was not successful.");
         }
 
         txtNewSupID.setText("");

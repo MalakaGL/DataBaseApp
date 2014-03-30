@@ -16,7 +16,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane8" alignment="0" pref="459" max="32767" attributes="0"/>
+          <Component id="jScrollPane8" min="-2" pref="425" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -49,9 +49,9 @@
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="txtNewRepID" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
                                   <Component id="txtNewRepName" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtNewRepName1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnAddTPSRep" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="pnlAddTPSRep" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtNewRepLastName" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btnAddTP" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="pnlAddTP" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -61,7 +61,7 @@
                               <Component id="btnNewRepCancel" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="395" max="32767" attributes="0"/>
+                      <EmptySpace pref="39" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -81,15 +81,15 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel65" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNewRepName1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNewRepLastName" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel60" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="pnlAddTPSRep" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="pnlAddTP" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                      <Component id="btnAddTPSRep" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAddTP" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnNewRepCancel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -126,11 +126,10 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtNewRepName">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNewRepNameActionPerformed"/>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtNewRepNameFocusGained"/>
               </Events>
             </Component>
-            <Container class="javax.swing.JPanel" name="pnlAddTPSRep">
+            <Container class="javax.swing.JPanel" name="pnlAddTP">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel(new GridLayout(0,1))"/>
               </AuxValues>
@@ -142,22 +141,18 @@
                 <Property name="text" type="java.lang.String" value="Telephone Number"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnAddTPSRep">
+            <Component class="javax.swing.JButton" name="btnAddTP">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add Another Number"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddTPSRepActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddTPActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNewRepName1">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNewRepName1ActionPerformed"/>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtNewRepName1FocusGained"/>
-              </Events>
+            <Component class="javax.swing.JTextField" name="txtNewRepLastName">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel65">
               <Properties>

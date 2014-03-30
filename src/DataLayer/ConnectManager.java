@@ -257,3 +257,16 @@ public class ConnectManager {
         return null;
     }
 }
+
+//create view CustomerDetails as
+//select c.customerid,c.firstname, c.lastname, c.addresscity,
+//	c.email, c.customertype, f.creditlimit, f.availablecredit,
+//        f.totalpoint ,
+//       max(p.telephonenumber) Phone_Num_1,
+//       case 
+//           when max(p.telephoneNumber) = min(p.telephonenumber) then NULL 
+//           else min(p.telephonenumber) 
+//       end Phone_Num_2
+//from customer c natural join creditfacility f
+//left join customercontact p on c.customerid = p.id
+//group by c.customerid

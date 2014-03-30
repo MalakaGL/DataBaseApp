@@ -20,12 +20,16 @@ import javax.swing.JTextField;
  */
 public class CustNew extends javax.swing.JPanel {
 
+    private JCheckBox creditAccepted;
+    private JTextField creditAmount;
+    private JComboBox reps;
+    private JTextField duePeriod;
+
     /**
      * Creates new form CustNew
      */
     public CustNew() {
         initComponents();
-        btnAddTP.doClick();
     }
 
     /**
@@ -63,9 +67,7 @@ public class CustNew extends javax.swing.JPanel {
         txtNewCustLastName = new javax.swing.JTextField();
         pnlCustType = new javax.swing.JPanel(new GridLayout(0,1));
 
-        jScrollPane6.setPreferredSize(new java.awt.Dimension(720, 592));
-
-        jPanel3.setPreferredSize(new java.awt.Dimension(700, 490));
+        jScrollPane6.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         txtNewCustName.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -135,120 +137,137 @@ public class CustNew extends javax.swing.JPanel {
 
         jLabel44.setText("Last Name");
 
-        txtNewCustLastName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNewCustLastNameActionPerformed(evt);
-            }
-        });
-        txtNewCustLastName.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtNewCustLastNameFocusGained(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnNewCustCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(btnNewCustCancel)
+                .addGap(243, 243, 243))
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(pnlCustType, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTxtAddNum)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel34))
-                                .addGap(32, 32, 32)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNewCustEmail)
-                                    .addComponent(pnlAddTP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel10)
-                                            .addComponent(jLabel9)
-                                            .addComponent(jLabel11))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtNewCustAddCity, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
-                                            .addComponent(txtNewCustAddNum)
-                                            .addComponent(txtNewCustAddStrt)))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(btnAddTP)
-                                        .addGap(42, 42, 42)
-                                        .addComponent(btnNewCustCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnNewCustCancel))))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addGap(49, 49, 49)
-                                .addComponent(cmbNewCustType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel7)
-                                .addComponent(jLabel44))
-                            .addGap(62, 62, 62)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtNewCustID, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtNewCustName, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
-                                .addComponent(txtNewCustLastName)))))
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel7))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel44))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jTxtAddNum)
+                        .addGap(83, 83, 83)
+                        .addComponent(jLabel9))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(jLabel10))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(jLabel11))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel12))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtNewCustAddStrt, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNewCustAddCity, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNewCustAddNum, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNewCustEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNewCustName, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNewCustLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(pnlCustType, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel13)
+                        .addGap(49, 49, 49)
+                        .addComponent(cmbNewCustType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(btnAddTP))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel34)
+                        .addGap(32, 32, 32)
+                        .addComponent(pnlAddTP, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel5)
+                        .addGap(62, 62, 62)
+                        .addComponent(txtNewCustID, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel5))
                     .addComponent(txtNewCustID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel7))
                     .addComponent(txtNewCustName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel44)
+                .addGap(6, 6, 6)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel44))
                     .addComponent(txtNewCustLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTxtAddNum)
+                .addGap(6, 6, 6)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtNewCustAddNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTxtAddNum)
+                            .addComponent(jLabel9))))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel10))
                     .addComponent(txtNewCustAddStrt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
+                .addGap(6, 6, 6)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel11))
                     .addComponent(txtNewCustAddCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel12)
+                .addGap(6, 6, 6)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel12))
                     .addComponent(txtNewCustEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel34)
                     .addComponent(pnlAddTP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(11, 11, 11)
                 .addComponent(btnAddTP)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel13))
                     .addComponent(cmbNewCustType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(pnlCustType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnNewCustCancel)
-                    .addComponent(btnNewCustCreate))
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnNewCustCreate)
+                    .addComponent(btnNewCustCancel))
+                .addContainerGap())
         );
-
-        txtNewCustAddNum.getAccessibleContext().setAccessibleName("");
 
         jScrollPane6.setViewportView(jPanel3);
 
@@ -257,16 +276,16 @@ public class CustNew extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
-                .addGap(11, 11, 11))
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -274,7 +293,7 @@ public class CustNew extends javax.swing.JPanel {
         // TODO add your handling code here:
         String id = ManagerController.getNewCustomerID();
         txtNewCustID.setText("CU" + id
-                + ParityCheck.getKey(id));
+            + ParityCheck.getKey(id));
     }//GEN-LAST:event_txtNewCustNameFocusGained
 
     private void btnNewCustCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewCustCreateActionPerformed
@@ -288,17 +307,41 @@ public class CustNew extends javax.swing.JPanel {
         details.add(txtNewCustAddNum.getText());
         details.add(txtNewCustEmail.getText());
         details.add(((String) cmbNewCustType.getSelectedItem()).charAt(0) + "");
-        
+
         for (int i = 0; i < numbers.size(); i++) {
             details.add(((JTextField) numbers.get(i)).getText());
         }
 
         if (ManagerController.insertCustomer(details) > 0) {
             JOptionPane.showMessageDialog(this, "Customer Inserted "
-                    + "Successfully.");
+                + "Successfully.");
+            switch ((String) cmbNewCustType.getSelectedItem()) {
+                case "Mail Order":
+                ManagerController.insertMailOrder(id);
+                break;
+                case "Large Order":
+                details = new ArrayList<>();
+                details.add(id.substring(2, id.length() - 1));
+                details.add((String)reps.getSelectedItem());
+                if(creditAccepted.isSelected()){
+                    details.add(creditAmount.getText());
+                    details.add(duePeriod.getText());
+                }
+                ManagerController.insertLargeOrder(details);
+                break;
+                case "Walk-In VIP":
+                details = new ArrayList<>();
+                details.add(id);
+                if(creditAccepted.isSelected()){
+                    details.add(creditAmount.getText());
+                    details.add(duePeriod.getText());
+                }
+                ManagerController.insertWalkIn(details);
+                break;
+            }
         } else {
             JOptionPane.showMessageDialog(this, "Something went wrong."
-                    + "Customer creation was not successful.");
+                + "Customer creation was not successful.");
         }
 
         txtNewCustID.setText("");
@@ -325,14 +368,16 @@ public class CustNew extends javax.swing.JPanel {
 
     private void cmbNewCustTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbNewCustTypeActionPerformed
         // TODO add your handling code here:
-        String item = (String)(((JComboBox)evt.getSource()).getSelectedItem());
-        switch(item){
+        String item = (String) (((JComboBox) evt.getSource()).getSelectedItem());
+        switch (item) {
             case "Large Order":
-                addLargeOrder();
-                break;
+            addLargeOrder();
+            break;
             case "Walk-In VIP":
-                addWalkInVIP();
-                break;
+            addWalkInVIP();
+            break;
+            default:
+            clearCredit();
         }
     }//GEN-LAST:event_cmbNewCustTypeActionPerformed
 
@@ -343,6 +388,7 @@ public class CustNew extends javax.swing.JPanel {
 
     private void btnAddTPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddTPActionPerformed
         // TODO add your handling code here:
+        System.out.println("button clicked.");
         if (numbers.isEmpty()) {
             JTextField temp = new JTextField("");
             temp.setPreferredSize(txtNewCustEmail.getSize());
@@ -362,13 +408,6 @@ public class CustNew extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnAddTPActionPerformed
 
-    private void txtNewCustLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNewCustLastNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNewCustLastNameActionPerformed
-
-    private void txtNewCustLastNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNewCustLastNameFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNewCustLastNameFocusGained
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton btnAddTP;
     private javax.swing.JButton btnNewCustCancel;
@@ -402,28 +441,42 @@ public class CustNew extends javax.swing.JPanel {
     private void addWalkInVIP() {
         JCheckBox credit = new JCheckBox("Credit Facility Accepted.");
         JLabel creditAm = new JLabel("Credit Limit");
+        JLabel dueTime = new JLabel("Due Period");
         JTextField creditAmt = new JTextField("");
+        duePeriod = new JTextField("");
         creditAmt.setSize(creditAm.getSize());
         pnlCustType.removeAll();
         pnlCustType.add(credit);
         pnlCustType.add(creditAm);
         pnlCustType.add(creditAmt);
+        pnlCustType.add(dueTime);
+        pnlCustType.add(duePeriod);
         pnlCustType.revalidate();
         validate();
     }
 
     private void addLargeOrder() {
-        JCheckBox credit = new JCheckBox("Credit Facility Accepted.");
+        creditAccepted = new JCheckBox("Credit Facility Accepted.");
         JLabel creditAm = new JLabel("Credit Limit");
-        JTextField creditAmt = new JTextField("");
+        JLabel dueTime = new JLabel("Due Period");
+        duePeriod = new JTextField("");
+        creditAmount = new JTextField("");
         JLabel rep = new JLabel("Assigned Sales Representative");
-        JComboBox reps = new JComboBox(/*ManagerController.getReps()*/);
+        reps = new JComboBox(ManagerController.getReps());
         pnlCustType.removeAll();
-        pnlCustType.add(credit);
+        pnlCustType.add(creditAccepted);
         pnlCustType.add(creditAm);
-        pnlCustType.add(creditAmt);
+        pnlCustType.add(creditAmount);
+        pnlCustType.add(dueTime);
+        pnlCustType.add(duePeriod);
         pnlCustType.add(rep);
         pnlCustType.add(reps);
+        pnlCustType.revalidate();
+        validate();
+    }
+
+    private void clearCredit() {
+        pnlCustType.removeAll();
         pnlCustType.revalidate();
         validate();
     }

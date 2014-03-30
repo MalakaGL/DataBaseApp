@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -69,7 +68,7 @@ public class ManagerController {
             details[0] = (String) detail.get(i);
             details[1] = (String) detail.get(0);
             if (ConnectManager.insertData("SupplierContact", details) <= 0) {
-                System.out.println("failed insert num");
+                System.out.println("Failed to Insert Suplier Contact Number");
                 return 0;
             }
         }
@@ -376,8 +375,9 @@ public class ManagerController {
             }
             result[0] = "";
             while(rs.next()){
-                result[rs.getRow()] = rs.getString("FirstName") + "("+
-                        rs.getString("SalesRepID") + ")";
+                String sid = rs.getString("SalesRepID");
+                result[rs.getRow()] = rs.getString("FirstName") + "(SR"+
+                        sid +""+ ParityCheck.getKey(sid) + ")";
             }
             return result;
         } catch (SQLException ex) {
@@ -393,16 +393,47 @@ public class ManagerController {
         ConnectManager.insertData("MaiOrderCustomer", details);
     }
 
-    public static void insertLargeOrder(String id, Boolean hasCredit, String rep) {
-        String details [] = new String[4];
-        details[0] = id;
-        if(hasCredit){
-            details[1] = "1";
-        }else{
-            details[1] = "0";
+    public static void insertLargeOrder( ArrayList <Object> details) {
+        String detail [] = new String[4];
+        detail[0] = (String)details.get(0);
+        String sr = (String)details.get(1);
+        if(details.size() > 2){
+            detail[1] = "1";
+            String [] facility = new String[7];
+            facility[0] = detail[0];
+            facility[1] = (String)details.get(2);
+            facility[2] = facility[1];
+            facility[3] = null;
+            facility[4] = (String)details.get(3);
+            facility[5] = "0";
+            facility[6] = "0";
+            ConnectManager.insertData("CreditFacility", facility);
+        } else{
+            detail[1] = "0";
         }
-        details[2] = ConnectManager.getNextId("LargeOrderCustomer", "BRN");
-        details[3] = rep.substring(rep.length() - 7, rep.length()-1);
-        ConnectManager.insertData("LargeOrderCustomer", details);
+        detail[3] = sr.substring(sr.length()-8, sr.length()-2);
+        detail[2] = ConnectManager.getNextId("LargeOrderCustomer", "BRN");
+        ConnectManager.insertData("LargeOrderCustomer", detail);
+    }
+
+    public static void insertWalkIn(ArrayList<Object> details) {
+        String detail [] = new String[4];
+        detail[0] = (String)details.get(0);
+        if(details.size() > 2){
+            detail[1] = "1";
+            String [] facility = new String[7];
+            facility[0] = detail[0];
+            facility[1] = (String)details.get(2);
+            facility[2] = facility[1];
+            facility[3] = null;
+            facility[4] = (String)details.get(3);
+            facility[5] = "0";
+            facility[6] = "0";
+            ConnectManager.insertData("CreditFacility", facility);
+        } else{
+            detail[0] = "0";
+        }
+        detail[2] = ConnectManager.getNextId("WalkInVIP", "TRN");
+        ConnectManager.insertData("WalkInVIP", detail);
     }
 }

@@ -16,12 +16,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane7" alignment="0" pref="462" max="32767" attributes="0"/>
+          <Component id="jScrollPane7" min="-2" pref="404" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane7" alignment="0" pref="291" max="32767" attributes="0"/>
+          <Component id="jScrollPane7" min="-2" pref="373" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -114,8 +114,8 @@
                       </Group>
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel57" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="pnlAddTPSup" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="pnlAddTPSup" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel57" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnAddTPSup" min="-2" max="-2" attributes="0"/>
@@ -124,7 +124,7 @@
                           <Component id="btnNewSupCreate" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnNewSupCancel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="291" max="32767" attributes="0"/>
+                      <EmptySpace pref="140" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

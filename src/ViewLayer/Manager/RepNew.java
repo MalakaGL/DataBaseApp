@@ -5,6 +5,7 @@
 package ViewLayer.Manager;
 
 import ControllLayer.Manager.ManagerController;
+import ControllLayer.ParityCheck;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -39,10 +40,10 @@ public class RepNew extends javax.swing.JPanel {
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
         txtNewRepName = new javax.swing.JTextField();
-        pnlAddTPSRep = new javax.swing.JPanel(new GridLayout(0,1));
+        pnlAddTP = new javax.swing.JPanel(new GridLayout(0,1));
         jLabel60 = new javax.swing.JLabel();
-        btnAddTPSRep = new javax.swing.JButton();
-        txtNewRepName1 = new javax.swing.JTextField();
+        btnAddTP = new javax.swing.JButton();
+        txtNewRepLastName = new javax.swing.JTextField();
         jLabel65 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
@@ -59,11 +60,6 @@ public class RepNew extends javax.swing.JPanel {
 
         jLabel52.setText("First Name");
 
-        txtNewRepName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNewRepNameActionPerformed(evt);
-            }
-        });
         txtNewRepName.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtNewRepNameFocusGained(evt);
@@ -72,21 +68,10 @@ public class RepNew extends javax.swing.JPanel {
 
         jLabel60.setText("Telephone Number");
 
-        btnAddTPSRep.setText("Add Another Number");
-        btnAddTPSRep.addActionListener(new java.awt.event.ActionListener() {
+        btnAddTP.setText("Add Another Number");
+        btnAddTP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddTPSRepActionPerformed(evt);
-            }
-        });
-
-        txtNewRepName1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNewRepName1ActionPerformed(evt);
-            }
-        });
-        txtNewRepName1.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtNewRepName1FocusGained(evt);
+                btnAddTPActionPerformed(evt);
             }
         });
 
@@ -116,15 +101,15 @@ public class RepNew extends javax.swing.JPanel {
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtNewRepID, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNewRepName)
-                            .addComponent(txtNewRepName1)
-                            .addComponent(btnAddTPSRep)
-                            .addComponent(pnlAddTPSRep, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(txtNewRepLastName)
+                            .addComponent(btnAddTP)
+                            .addComponent(pnlAddTP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(244, 244, 244)
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnNewRepCancel)))
-                .addContainerGap(395, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,13 +125,13 @@ public class RepNew extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel65)
-                    .addComponent(txtNewRepName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNewRepLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel60)
-                    .addComponent(pnlAddTPSRep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pnlAddTP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
-                .addComponent(btnAddTPSRep)
+                .addComponent(btnAddTP)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNewRepCancel)
@@ -160,7 +145,7 @@ public class RepNew extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
+            .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,49 +158,39 @@ public class RepNew extends javax.swing.JPanel {
         ManagerView.jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_btnNewRepCancelActionPerformed
 
-    private void txtNewRepNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNewRepNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNewRepNameActionPerformed
-
     private void txtNewRepNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNewRepNameFocusGained
         // TODO add your handling code here:
-        txtNewRepID.setText(ManagerController.getNewSRepID());
+        String id = ManagerController.getNewSRepID();
+        txtNewRepID.setText("SR" + id + ParityCheck.getKey(id));
     }//GEN-LAST:event_txtNewRepNameFocusGained
 
-    private void btnAddTPSRepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddTPSRepActionPerformed
+    private void btnAddTPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddTPActionPerformed
         // TODO add your handling code here:
         if (numbers.isEmpty()) {
             JTextField temp = new JTextField("");
-            temp.setPreferredSize(txtNewRepName1.getSize());
+            temp.setPreferredSize(txtNewRepLastName.getSize());
             numbers.add(temp);
-            pnlAddTPSRep.add(temp);
-            pnlAddTPSRep.revalidate();
+            pnlAddTP.add(temp);
+            pnlAddTP.revalidate();
             validate();
         } else if (!((JTextField) numbers.get(numbers.size() - 1)).getText().equals("")) {
             JTextField temp = new JTextField("");
-            temp.setPreferredSize(txtNewRepName1.getSize());
+            temp.setPreferredSize(txtNewRepLastName.getSize());
             numbers.add(temp);
-            pnlAddTPSRep.add(temp);
-            pnlAddTPSRep.revalidate();
+            pnlAddTP.add(temp);
+            pnlAddTP.revalidate();
             validate();
         } else {
             JOptionPane.showMessageDialog(this, "Please enter the number above.");
         }
-    }//GEN-LAST:event_btnAddTPSRepActionPerformed
-
-    private void txtNewRepName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNewRepName1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNewRepName1ActionPerformed
-
-    private void txtNewRepName1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNewRepName1FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNewRepName1FocusGained
+    }//GEN-LAST:event_btnAddTPActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        details.add(txtNewRepID.getText());
+        String id = txtNewRepID.getText();
+        details.add(id.substring(2, id.length()-1));
         details.add(txtNewRepName.getText());
-        details.add(txtNewRepName1.getText());
+        details.add(txtNewRepLastName.getText());
 
         for (int i = 0; i < numbers.size(); i++) {
             details.add(((JTextField) numbers.get(i)).getText());
@@ -231,15 +206,15 @@ public class RepNew extends javax.swing.JPanel {
 
         txtNewRepID.setText("");
         txtNewRepName.setText("");
-        txtNewRepName1.setText("");
+        txtNewRepLastName.setText("");
         numbers = new ArrayList<>();
         details = new ArrayList<>();
-        pnlAddTPSRep.removeAll();
-        btnAddTPSRep.doClick();
+        pnlAddTP.removeAll();
+        btnAddTP.doClick();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JButton btnAddTPSRep;
+    public static javax.swing.JButton btnAddTP;
     private javax.swing.JButton btnNewRepCancel;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel51;
@@ -248,10 +223,10 @@ public class RepNew extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel65;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JPanel pnlAddTPSRep;
+    private javax.swing.JPanel pnlAddTP;
     private javax.swing.JTextField txtNewRepID;
+    private javax.swing.JTextField txtNewRepLastName;
     private javax.swing.JTextField txtNewRepName;
-    private javax.swing.JTextField txtNewRepName1;
     // End of variables declaration//GEN-END:variables
     ArrayList<Object> details = new ArrayList<>();
     ArrayList<Object> numbers = new ArrayList<>();

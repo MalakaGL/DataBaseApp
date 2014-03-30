@@ -7,7 +7,6 @@ package ViewLayer.Manager;
 import ControllLayer.Controller;
 import ViewLayer.Cashier.CashierView;
 import com.alee.laf.WebLookAndFeel;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
@@ -227,6 +226,12 @@ public class ManagerView extends javax.swing.JFrame {
         jTabbedPane1.addTab("Home", pnlHome);
 
         pnlCustomers.setLayout(new java.awt.CardLayout());
+
+        jTabbedPane8.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane8StateChanged(evt);
+            }
+        });
 
         pnlSearchCust.setLayout(new java.awt.CardLayout());
         jTabbedPane8.addTab("Search Customer", pnlSearchCust);
@@ -522,6 +527,7 @@ public class ManagerView extends javax.swing.JFrame {
                 pnlNewCust.add(temp);
                 pnlNewCust.validate();
                 pnlNewCust.repaint();
+                CustNew.btnAddTP.doClick();
                 break;
             case 2:
                 temp = new SupNew();
@@ -541,6 +547,7 @@ public class ManagerView extends javax.swing.JFrame {
                 pnlSearchSup.add(temp);
                 pnlSearchSup.validate();
                 pnlSearchSup.repaint();
+                SupNew.btnAddTPSup.doClick();
                 break;
             case 3:
                 temp = new RepNew();
@@ -560,6 +567,7 @@ public class ManagerView extends javax.swing.JFrame {
                 pnlSearchRep.add(temp);
                 pnlSearchRep.validate();
                 pnlSearchRep.repaint();
+                RepNew.btnAddTP.doClick();
                 break;
             case 4:
                 temp = new ItemNew();
@@ -630,6 +638,10 @@ public class ManagerView extends javax.swing.JFrame {
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void jTabbedPane8StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane8StateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTabbedPane8StateChanged
 
     /**
      * @param args the command line arguments

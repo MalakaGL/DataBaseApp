@@ -36,287 +36,299 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="btnNewCustCreate" min="-2" pref="79" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="btnNewCustCancel" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jTxtAddNum" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="txtNewCustEmail" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="btnAddTP" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="pnlAddTP" alignment="1" max="32767" attributes="0"/>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace pref="37" max="32767" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="txtNewCustAddStrt" alignment="0" pref="251" max="32767" attributes="0"/>
-                                                  <Component id="txtNewCustAddNum" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="txtNewCustAddCity" alignment="0" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="cmbNewCustType" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtNewCustCreditLimit" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="btnFindCustCancel" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="chkCreditFacAccepted" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="cmbFindCustBy" min="-2" pref="125" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="txtFindCustVal" min="-2" pref="131" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btnFindCustFind" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="chkBoxFindCustCustID" min="-2" pref="89" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                                              <Component id="chkBoxFindCustName" min="-2" pref="89" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                                              <Component id="chkBoxFindCustCity" min="-2" pref="89" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="chkBoxFindCustEmail" min="-2" pref="89" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="chkBoxFindCustType" min="-2" pref="99" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="chkBoxFindCustCreditAvail" min="-2" pref="99" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                                              <Component id="chkBoxFindCustClrCount" min="-2" pref="89" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                                              <Component id="chkBoxFindCustPoint" min="-2" pref="89" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="chkboxFindCustCredit" min="-2" pref="89" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="chkBoxFindCustTP" min="-2" pref="89" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="chkBoxFindCustTP1" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="chkBoxFindCustType1" alignment="0" pref="99" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtNewCustID" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
-                                  <Component id="txtNewCustName" alignment="0" pref="325" max="32767" attributes="0"/>
-                                  <Component id="txtNewCustName1" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="0" pref="148" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="273" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNewCustID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cmbFindCustBy" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtFindCustVal" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnFindCustFind" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNewCustName" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNewCustName1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTxtAddNum" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNewCustAddNum" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNewCustAddCity" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNewCustAddStrt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel12" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNewCustEmail" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="pnlAddTP" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="chkBoxFindCustCustID" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkBoxFindCustEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkBoxFindCustCity" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkBoxFindCustName" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="chkBoxFindCustCreditAvail" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkBoxFindCustPoint" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkBoxFindCustClrCount" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkboxFindCustCredit" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkBoxFindCustTP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkBoxFindCustTP1" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="chkBoxFindCustType1" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="chkBoxFindCustType" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnAddTP" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cmbNewCustType" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                      <Component id="chkCreditFacAccepted" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel35" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNewCustCreditLimit" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnNewCustCancel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnNewCustCreate" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="113" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" pref="232" max="-2" attributes="0"/>
+                      <EmptySpace pref="85" max="32767" attributes="0"/>
+                      <Component id="btnFindCustCancel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="txtNewCustName">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNewCustNameActionPerformed"/>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtNewCustNameFocusGained"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtNewCustAddCity">
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel34">
+            <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Telephone Number"/>
+                <Property name="text" type="java.lang.String" value="Find Customer by "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnNewCustCreate">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Create"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewCustCreateActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel10">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Street"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel13">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Customer Type"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel9">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Number"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jTxtAddNum">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Address"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel5">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Customer ID"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtNewCustAddStrt">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNewCustAddStrtActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtNewCustEmail">
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtNewCustID">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel7">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="First Name"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtNewCustAddNum">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNewCustAddNumActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel11">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="City"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel12">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="E-mail"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="cmbNewCustType">
+            <Component class="javax.swing.JComboBox" name="cmbFindCustBy">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
+                  <StringArray count="7">
                     <StringItem index="0" value=" "/>
-                    <StringItem index="1" value="Mail-Order"/>
-                    <StringItem index="2" value="Large Order"/>
-                    <StringItem index="3" value="Walk-In VIP"/>
+                    <StringItem index="1" value="CustomerID"/>
+                    <StringItem index="2" value="FirstName"/>
+                    <StringItem index="3" value="AddressCity"/>
+                    <StringItem index="4" value="AddressStreet"/>
+                    <StringItem index="5" value="Email"/>
+                    <StringItem index="6" value="CustomerType"/>
                   </StringArray>
                 </Property>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Value searching for "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtFindCustVal">
               <Events>
-                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cmbNewCustTypeItemStateChanged"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbNewCustTypeActionPerformed"/>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtFindCustValFocusGained"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnNewCustCancel">
+            <Component class="javax.swing.JLabel" name="jLabel4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Show me "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chkBoxFindCustCustID">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="CustomerID"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="chkBoxFindCustCustIDItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chkBoxFindCustEmail">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Email"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="chkBoxFindCustEmailItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chkBoxFindCustCity">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="LastName"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="chkBoxFindCustCityItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chkBoxFindCustName">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="FirstName"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="chkBoxFindCustNameItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chkBoxFindCustType">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Address"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="chkBoxFindCustTypeItemStateChanged"/>
+              </Events>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tableFindCust">
+                  <Properties>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JButton" name="btnFindCustFind">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Find"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFindCustFindActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chkBoxFindCustTP">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="CustomerType"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="chkBoxFindCustTPItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnFindCustCancel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cancel"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewCustCancelActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFindCustCancelActionPerformed"/>
               </Events>
             </Component>
-            <Container class="javax.swing.JPanel" name="pnlAddTP">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel(new GridLayout(0,1))"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
-            </Container>
-            <Component class="javax.swing.JButton" name="btnAddTP">
+            <Component class="javax.swing.JCheckBox" name="chkboxFindCustCredit">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Add Another Number"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddTPActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel35">
-              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
                 <Property name="text" type="java.lang.String" value="Credit Limit"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtNewCustCreditLimit">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JCheckBox" name="chkCreditFacAccepted">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Credit Facility Accepted"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="chkCreditFacAcceptedItemStateChanged"/>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="chkboxFindCustCreditItemStateChanged"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel44">
+            <Component class="javax.swing.JCheckBox" name="chkBoxFindCustCreditAvail">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Last Name"/>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Available credit"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtNewCustName1">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNewCustName1ActionPerformed"/>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtNewCustName1FocusGained"/>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="chkBoxFindCustCreditAvailItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chkBoxFindCustClrCount">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Clear Count"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="chkBoxFindCustClrCountItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chkBoxFindCustPoint">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Total Point"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="chkBoxFindCustPointItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chkBoxFindCustType1">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Telephone"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="chkBoxFindCustType1ItemStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="chkBoxFindCustTP1">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="FirstIssueDate"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="chkBoxFindCustTP1ItemStateChanged"/>
               </Events>
             </Component>
           </SubComponents>
