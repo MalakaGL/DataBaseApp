@@ -81,7 +81,6 @@ public class ManagerView extends javax.swing.JFrame {
         pnlSearchOrder = new javax.swing.JPanel();
         pnlEditOrder = new javax.swing.JPanel();
         pnlNewOrder = new javax.swing.JPanel();
-        pnlProcessOrder = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane11 = new javax.swing.JScrollPane();
@@ -331,9 +330,6 @@ public class ManagerView extends javax.swing.JFrame {
 
         pnlNewOrder.setLayout(new java.awt.CardLayout());
         jTabbedPane3.addTab("New Order", pnlNewOrder);
-
-        pnlProcessOrder.setLayout(new java.awt.CardLayout());
-        jTabbedPane3.addTab("Process Order", pnlProcessOrder);
 
         javax.swing.GroupLayout pnlOrdersLayout = new javax.swing.GroupLayout(pnlOrders);
         pnlOrders.setLayout(pnlOrdersLayout);
@@ -624,13 +620,7 @@ public class ManagerView extends javax.swing.JFrame {
                 pnlSearchOrder.removeAll();
                 pnlSearchOrder.add(temp);
                 pnlSearchOrder.validate();
-                pnlSearchOrder.repaint();
-                
-                temp = new OrderProcess();
-                pnlProcessOrder.removeAll();
-                pnlProcessOrder.add(temp);
-                pnlProcessOrder.validate();
-                pnlProcessOrder.repaint();
+                pnlSearchOrder.repaint();                
                 break;
         }
     }//GEN-LAST:event_jTabbedPane1StateChanged
@@ -745,7 +735,6 @@ public class ManagerView extends javax.swing.JFrame {
     private javax.swing.JPanel pnlNewSup;
     private javax.swing.JPanel pnlNewUser;
     private javax.swing.JPanel pnlOrders;
-    private javax.swing.JPanel pnlProcessOrder;
     private javax.swing.JPanel pnlSalesReps;
     private javax.swing.JPanel pnlSearchCust;
     private javax.swing.JPanel pnlSearchItem;

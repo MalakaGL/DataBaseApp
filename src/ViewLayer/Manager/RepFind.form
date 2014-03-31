@@ -40,75 +40,84 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jScrollPane5" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="cmbFindRepBy" min="-2" pref="87" max="-2" attributes="0"/>
+                          <Component id="jLabel48" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                          <Component id="cmbFindRepBy" pref="0" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                          <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="txtFindRepVal" min="-2" pref="115" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="jLabel49" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtFindRepVal" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel50" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="chkBoxFindRepID" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="chkBoxFindRepName" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="chkBoxFindRepCity" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="chkBoxFindRepEmail" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="chkBoxFindRepType" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="chkBoxFindRepTP" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel50" max="32767" attributes="0"/>
+                                  <EmptySpace min="368" pref="368" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="chkBoxFindRepID" max="32767" attributes="0"/>
+                                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkBoxFindRepName" max="32767" attributes="0"/>
+                                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkBoxFindRepCity" max="32767" attributes="0"/>
+                                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkBoxFindRepEmail" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkBoxFindRepType" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Component id="chkBoxFindRepTP" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="4" max="32767" attributes="0"/>
-                          <Component id="btnFindRepFind" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                          <Component id="btnFindRepFind" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="btnFindRepCancel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="406" max="-2" attributes="0"/>
+                          <Component id="btnFindRepCancel" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cmbFindRepBy" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtFindRepVal" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="3" attributes="0">
+                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                          <Component id="jLabel48" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="cmbFindRepBy" alignment="3" max="32767" attributes="0"/>
+                      <Group type="102" alignment="3" attributes="0">
+                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                          <Component id="jLabel49" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="txtFindRepVal" alignment="3" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel50" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="chkBoxFindRepID" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="chkBoxFindRepType" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="chkBoxFindRepEmail" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="chkBoxFindRepCity" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="chkBoxFindRepName" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnFindRepFind" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="chkBoxFindRepTP" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="chkBoxFindRepID" alignment="3" max="32767" attributes="0"/>
+                      <Component id="chkBoxFindRepType" alignment="3" max="32767" attributes="0"/>
+                      <Component id="chkBoxFindRepEmail" alignment="3" max="32767" attributes="0"/>
+                      <Component id="chkBoxFindRepCity" alignment="3" max="32767" attributes="0"/>
+                      <Component id="chkBoxFindRepName" alignment="3" max="32767" attributes="0"/>
+                      <Component id="btnFindRepFind" alignment="3" max="32767" attributes="0"/>
+                      <Component id="chkBoxFindRepTP" alignment="3" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane5" min="-2" pref="261" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnFindRepCancel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane5" pref="261" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnFindRepCancel" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

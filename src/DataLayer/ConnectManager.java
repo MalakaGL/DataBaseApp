@@ -25,6 +25,23 @@ public class ConnectManager {
 
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(
+                    //"jdbc:mysql://localhost/one_stop_shop", "root", "");
+                    "jdbc:mysql://localhost:45000/one_stop_shop", "noma", "RoEqnC7b");
+            return con;
+        } catch (ClassNotFoundException | SQLException ex) {
+            getLocalConnection();
+            Logger.getLogger(ConnectManager.class.getName()).log(Level.SEVERE,
+                    null, ex);
+
+        }
+        return null;
+    }
+    
+    public static Connection getLocalConnection() {
+        try {
+
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection(
                     "jdbc:mysql://localhost/one_stop_shop", "root", "");
                     //"jdbc:mysql://localhost:45000/one_stop_shop", "noma", "RoEqnC7b");
             return con;
@@ -106,15 +123,11 @@ public class ConnectManager {
                     values += param[i] + ",";
                 }
             }
-
             values = values.substring(0, values.length() - 1);
-            System.out.println("Values " + values);
-            System.out.println("Predicates " + predicate);
-
             Connection con = ConnectManager.getConnection();
             PreparedStatement pStmt = con.prepareStatement(
-                    "select " + values + " from " + tableName + " where "
-                    + attr + " = '" + predicate + "';");
+                    "select "+values+" from "+tableName+" where "+attr+" = ?;");
+            pStmt.setString(1, predicate);
             System.out.println("Statement " + pStmt);
             ResultSet resultSet = pStmt.executeQuery();
 
@@ -258,15 +271,8 @@ public class ConnectManager {
     }
 }
 
-//create view CustomerDetails as
-//select c.customerid,c.firstname, c.lastname, c.addresscity,
-//	c.email, c.customertype, f.creditlimit, f.availablecredit,
-//        f.totalpoint ,
-//       max(p.telephonenumber) Phone_Num_1,
-//       case 
-//           when max(p.telephoneNumber) = min(p.telephonenumber) then NULL 
-//           else min(p.telephonenumber) 
-//       end Phone_Num_2
-//from customer c natural join creditfacility f
-//left join customercontact p on c.customerid = p.id
-//group by c.customerid
+//drop view CustomerDetails;
+//create view CustomerDetails as 
+//select c.CustomerID,c.FirstName, c.LastName, c.AddressCity, c.Email, c.CustomerType, f.CreditLimit, f.AvailableCredit, f.//////TotalPoint , GROUP_CONCAT(p.TelephoneNumber SEPARATOR ', ') as Telephone 
+//from Customer c natural join CreditFacility f left join CustomerContact p on c.CustomerID = p.ID 
+//group by c.CustomerID

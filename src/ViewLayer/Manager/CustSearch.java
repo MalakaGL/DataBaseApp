@@ -23,6 +23,16 @@ public class CustSearch extends javax.swing.JPanel {
      */
     public CustSearch() {
         initComponents();
+        LastName.setName("AddressCity");
+        AvailableCredit.setName("AvailableCredit");
+        CreditLimit.setName("CreditLimit");
+        CustomerID.setName("CustomerID");
+        Address.setName("CustomerType");
+        Email.setName("Email");
+        FirstName.setName("FirstName");
+        CustType.setName("TelephoneNumber");
+        TotalPoint.setName("TotalPoint");  
+        LastName.setName("LastName");
         setVisible(true);
     }
 
@@ -35,33 +45,32 @@ public class CustSearch extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         cmbFindCustBy = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         txtFindCustVal = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        chkBoxFindCustCustID = new javax.swing.JCheckBox();
-        chkBoxFindCustEmail = new javax.swing.JCheckBox();
-        chkBoxFindCustCity = new javax.swing.JCheckBox();
-        chkBoxFindCustName = new javax.swing.JCheckBox();
-        chkBoxFindCustType = new javax.swing.JCheckBox();
+        CustomerID = new javax.swing.JCheckBox();
+        Email = new javax.swing.JCheckBox();
+        LastName = new javax.swing.JCheckBox();
+        FirstName = new javax.swing.JCheckBox();
+        Address = new javax.swing.JCheckBox();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableFindCust = new javax.swing.JTable();
-        btnFindCustFind = new javax.swing.JButton();
-        chkBoxFindCustTP = new javax.swing.JCheckBox();
+        CustType = new javax.swing.JCheckBox();
         btnFindCustCancel = new javax.swing.JButton();
-        chkboxFindCustCredit = new javax.swing.JCheckBox();
-        chkBoxFindCustCreditAvail = new javax.swing.JCheckBox();
-        chkBoxFindCustClrCount = new javax.swing.JCheckBox();
-        chkBoxFindCustPoint = new javax.swing.JCheckBox();
-        chkBoxFindCustType1 = new javax.swing.JCheckBox();
-        chkBoxFindCustTP1 = new javax.swing.JCheckBox();
+        CreditLimit = new javax.swing.JCheckBox();
+        AvailableCredit = new javax.swing.JCheckBox();
+        TotalPoint = new javax.swing.JCheckBox();
+        Telephone = new javax.swing.JCheckBox();
+        btnFindCustFind = new javax.swing.JButton();
+
+        setMaximumSize(new java.awt.Dimension(300, 400));
 
         jLabel2.setText("Find Customer by ");
 
-        cmbFindCustBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "CustomerID", "FirstName", "AddressCity", "AddressStreet", "Email", "CustomerType" }));
+        cmbFindCustBy.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "CustomerID", "FirstName", "AddressCity", "AddressStreet", "Email", "CustomerType", "TelephoneNumber" }));
 
         jLabel3.setText("Value searching for ");
 
@@ -73,67 +82,59 @@ public class CustSearch extends javax.swing.JPanel {
 
         jLabel4.setText("Show me ");
 
-        chkBoxFindCustCustID.setSelected(true);
-        chkBoxFindCustCustID.setText("CustomerID");
-        chkBoxFindCustCustID.setEnabled(false);
-        chkBoxFindCustCustID.addItemListener(new java.awt.event.ItemListener() {
+        CustomerID.setSelected(true);
+        CustomerID.setText("Customer ID");
+        CustomerID.setEnabled(false);
+        CustomerID.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                chkBoxFindCustCustIDItemStateChanged(evt);
+                CustomerIDItemStateChanged(evt);
             }
         });
 
-        chkBoxFindCustEmail.setSelected(true);
-        chkBoxFindCustEmail.setText("Email");
-        chkBoxFindCustEmail.setEnabled(false);
-        chkBoxFindCustEmail.addItemListener(new java.awt.event.ItemListener() {
+        Email.setSelected(true);
+        Email.setText("Email");
+        Email.setEnabled(false);
+        Email.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                chkBoxFindCustEmailItemStateChanged(evt);
+                EmailItemStateChanged(evt);
             }
         });
 
-        chkBoxFindCustCity.setSelected(true);
-        chkBoxFindCustCity.setText("LastName");
-        chkBoxFindCustCity.setEnabled(false);
-        chkBoxFindCustCity.addItemListener(new java.awt.event.ItemListener() {
+        LastName.setSelected(true);
+        LastName.setText("Last Name");
+        LastName.setEnabled(false);
+        LastName.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                chkBoxFindCustCityItemStateChanged(evt);
+                LastNameItemStateChanged(evt);
             }
         });
 
-        chkBoxFindCustName.setSelected(true);
-        chkBoxFindCustName.setText("FirstName");
-        chkBoxFindCustName.setEnabled(false);
-        chkBoxFindCustName.addItemListener(new java.awt.event.ItemListener() {
+        FirstName.setSelected(true);
+        FirstName.setText("First Name");
+        FirstName.setEnabled(false);
+        FirstName.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                chkBoxFindCustNameItemStateChanged(evt);
+                FirstNameItemStateChanged(evt);
             }
         });
 
-        chkBoxFindCustType.setSelected(true);
-        chkBoxFindCustType.setText("Address");
-        chkBoxFindCustType.setEnabled(false);
-        chkBoxFindCustType.addItemListener(new java.awt.event.ItemListener() {
+        Address.setSelected(true);
+        Address.setText("Address");
+        Address.setEnabled(false);
+        Address.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                chkBoxFindCustTypeItemStateChanged(evt);
+                AddressItemStateChanged(evt);
             }
         });
 
         jScrollPane2.setViewportView(tableFindCust);
 
-        btnFindCustFind.setText("Find");
-        btnFindCustFind.setEnabled(false);
-        btnFindCustFind.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFindCustFindActionPerformed(evt);
-            }
-        });
-
-        chkBoxFindCustTP.setSelected(true);
-        chkBoxFindCustTP.setText("CustomerType");
-        chkBoxFindCustTP.setEnabled(false);
-        chkBoxFindCustTP.addItemListener(new java.awt.event.ItemListener() {
+        CustType.setSelected(true);
+        CustType.setText("Customer Type");
+        CustType.setEnabled(false);
+        CustType.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                chkBoxFindCustTPItemStateChanged(evt);
+                CustTypeItemStateChanged(evt);
             }
         });
 
@@ -144,162 +145,166 @@ public class CustSearch extends javax.swing.JPanel {
             }
         });
 
-        chkboxFindCustCredit.setSelected(true);
-        chkboxFindCustCredit.setText("Credit Limit");
-        chkboxFindCustCredit.setEnabled(false);
-        chkboxFindCustCredit.addItemListener(new java.awt.event.ItemListener() {
+        CreditLimit.setSelected(true);
+        CreditLimit.setText("Credit Limit");
+        CreditLimit.setEnabled(false);
+        CreditLimit.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                chkboxFindCustCreditItemStateChanged(evt);
+                CreditLimitItemStateChanged(evt);
             }
         });
 
-        chkBoxFindCustCreditAvail.setSelected(true);
-        chkBoxFindCustCreditAvail.setText("Available credit");
-        chkBoxFindCustCreditAvail.setEnabled(false);
-        chkBoxFindCustCreditAvail.addItemListener(new java.awt.event.ItemListener() {
+        AvailableCredit.setSelected(true);
+        AvailableCredit.setText("Available credit");
+        AvailableCredit.setEnabled(false);
+        AvailableCredit.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                chkBoxFindCustCreditAvailItemStateChanged(evt);
+                AvailableCreditItemStateChanged(evt);
             }
         });
 
-        chkBoxFindCustClrCount.setSelected(true);
-        chkBoxFindCustClrCount.setText("Clear Count");
-        chkBoxFindCustClrCount.setEnabled(false);
-        chkBoxFindCustClrCount.addItemListener(new java.awt.event.ItemListener() {
+        TotalPoint.setSelected(true);
+        TotalPoint.setText("Total Point");
+        TotalPoint.setEnabled(false);
+        TotalPoint.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                chkBoxFindCustClrCountItemStateChanged(evt);
+                TotalPointItemStateChanged(evt);
             }
         });
 
-        chkBoxFindCustPoint.setSelected(true);
-        chkBoxFindCustPoint.setText("Total Point");
-        chkBoxFindCustPoint.setEnabled(false);
-        chkBoxFindCustPoint.addItemListener(new java.awt.event.ItemListener() {
+        Telephone.setSelected(true);
+        Telephone.setText("Telephone");
+        Telephone.setEnabled(false);
+        Telephone.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                chkBoxFindCustPointItemStateChanged(evt);
+                TelephoneItemStateChanged(evt);
             }
         });
 
-        chkBoxFindCustType1.setSelected(true);
-        chkBoxFindCustType1.setText("Telephone");
-        chkBoxFindCustType1.setEnabled(false);
-        chkBoxFindCustType1.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                chkBoxFindCustType1ItemStateChanged(evt);
+        btnFindCustFind.setText("Find");
+        btnFindCustFind.setEnabled(false);
+        btnFindCustFind.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFindCustFindActionPerformed(evt);
             }
         });
 
-        chkBoxFindCustTP1.setSelected(true);
-        chkBoxFindCustTP1.setText("FirstIssueDate");
-        chkBoxFindCustTP1.setEnabled(false);
-        chkBoxFindCustTP1.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                chkBoxFindCustTP1ItemStateChanged(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnFindCustCancel))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cmbFindCustBy, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtFindCustVal, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnFindCustFind))
-                    .addComponent(jScrollPane2)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(chkBoxFindCustCustID, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(chkBoxFindCustName, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(chkBoxFindCustCity, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(chkBoxFindCustEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(chkBoxFindCustType, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(chkBoxFindCustCreditAvail, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(chkBoxFindCustClrCount, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(chkBoxFindCustPoint, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(chkboxFindCustCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(chkBoxFindCustTP, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(chkBoxFindCustTP1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(chkBoxFindCustType1, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))))
-                        .addGap(0, 148, Short.MAX_VALUE)))
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(CustomerID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(74, 74, 74))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(AvailableCredit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Telephone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(66, 66, 66)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(TotalPoint, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                        .addGap(38, 38, 38))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(FirstName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(61, 61, 61))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(58, 58, 58)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(CreditLimit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(LastName, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(90, 90, 90))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(CustType, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                        .addGap(169, 169, 169))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(542, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cmbFindCustBy, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                        .addGap(95, 95, 95)))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                        .addGap(93, 93, 93))
+                    .addComponent(txtFindCustVal))
+                .addGap(106, 106, 106)
+                .addComponent(btnFindCustFind, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                .addGap(10, 10, 10))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(531, 531, 531)
+                .addComponent(btnFindCustCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(6, 6, 6))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane2)
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(cmbFindCustBy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtFindCustVal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnFindCustFind))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(chkBoxFindCustCustID)
-                            .addComponent(chkBoxFindCustEmail)
-                            .addComponent(chkBoxFindCustCity)
-                            .addComponent(chkBoxFindCustName))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(chkBoxFindCustCreditAvail)
-                            .addComponent(chkBoxFindCustPoint)
-                            .addComponent(chkBoxFindCustClrCount)
-                            .addComponent(chkboxFindCustCredit)
-                            .addComponent(chkBoxFindCustTP)
-                            .addComponent(chkBoxFindCustTP1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(chkBoxFindCustType1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(chkBoxFindCustType)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnFindCustFind, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cmbFindCustBy)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtFindCustVal)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(13, 13, 13)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(LastName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(FirstName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(CustomerID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AvailableCredit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(TotalPoint, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CreditLimit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Telephone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CustType, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
-                .addComponent(btnFindCustCancel)
-                .addGap(39, 39, 39))
+                .addComponent(btnFindCustCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
-
-        jScrollPane6.setViewportView(jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -308,20 +313,20 @@ public class CustSearch extends javax.swing.JPanel {
         btnFindCustFind.setEnabled(true);
     }//GEN-LAST:event_txtFindCustValFocusGained
 
-    private void chkBoxFindCustEmailItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chkBoxFindCustEmailItemStateChanged
+    private void EmailItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_EmailItemStateChanged
         // TODO add your handling code here:
         refresh(evt);
-    }//GEN-LAST:event_chkBoxFindCustEmailItemStateChanged
+    }//GEN-LAST:event_EmailItemStateChanged
 
-    private void chkBoxFindCustCityItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chkBoxFindCustCityItemStateChanged
+    private void LastNameItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_LastNameItemStateChanged
         // TODO add your handling code here:
         refresh(evt);
-    }//GEN-LAST:event_chkBoxFindCustCityItemStateChanged
+    }//GEN-LAST:event_LastNameItemStateChanged
 
-    private void chkBoxFindCustTypeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chkBoxFindCustTypeItemStateChanged
+    private void AddressItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_AddressItemStateChanged
         // TODO add your handling code here:
         refresh(evt);
-    }//GEN-LAST:event_chkBoxFindCustTypeItemStateChanged
+    }//GEN-LAST:event_AddressItemStateChanged
 
     private void btnFindCustFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindCustFindActionPerformed
         // TODO add your handling code here:
@@ -341,91 +346,78 @@ public class CustSearch extends javax.swing.JPanel {
         if (table == null || table.getRowCount() == 0) {
             JOptionPane.showMessageDialog(this, "No result found.");
         } else {
-            chkBoxFindCustCity.setEnabled(true);
-            chkBoxFindCustCustID.setEnabled(true);
-            chkBoxFindCustEmail.setEnabled(true);
-            chkBoxFindCustName.setEnabled(true);
-            chkBoxFindCustType.setEnabled(true);
-            chkBoxFindCustClrCount.setEnabled(true);
-            chkBoxFindCustCreditAvail.setEnabled(true);
-            chkBoxFindCustPoint.setEnabled(true);
-            chkboxFindCustCredit.setEnabled(true);
-            chkBoxFindCustTP.setEnabled(true);
+            LastName.setEnabled(true);
+            CustomerID.setEnabled(true);
+            Email.setEnabled(true);
+            FirstName.setEnabled(true);
+            Address.setEnabled(true);
+            AvailableCredit.setEnabled(true);
+            TotalPoint.setEnabled(true);
+            CreditLimit.setEnabled(true);
+            CustType.setEnabled(true);
+            Telephone.setEnabled(true);
             tableFindCust.setModel(table.getModel());
         }
     }//GEN-LAST:event_btnFindCustFindActionPerformed
 
-    private void chkBoxFindCustTPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chkBoxFindCustTPItemStateChanged
+    private void CustTypeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CustTypeItemStateChanged
         // TODO add your handling code here:
         refresh(evt);
-    }//GEN-LAST:event_chkBoxFindCustTPItemStateChanged
+    }//GEN-LAST:event_CustTypeItemStateChanged
 
     private void btnFindCustCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindCustCancelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnFindCustCancelActionPerformed
 
-    private void chkboxFindCustCreditItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chkboxFindCustCreditItemStateChanged
+    private void CreditLimitItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CreditLimitItemStateChanged
         // TODO add your handling code here:
         refresh(evt);
-    }//GEN-LAST:event_chkboxFindCustCreditItemStateChanged
+    }//GEN-LAST:event_CreditLimitItemStateChanged
 
-    private void chkBoxFindCustCreditAvailItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chkBoxFindCustCreditAvailItemStateChanged
+    private void AvailableCreditItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_AvailableCreditItemStateChanged
         // TODO add your handling code here:
         refresh(evt);
-    }//GEN-LAST:event_chkBoxFindCustCreditAvailItemStateChanged
+    }//GEN-LAST:event_AvailableCreditItemStateChanged
 
-    private void chkBoxFindCustClrCountItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chkBoxFindCustClrCountItemStateChanged
+    private void TotalPointItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_TotalPointItemStateChanged
         // TODO add your handling code here:
         refresh(evt);
-    }//GEN-LAST:event_chkBoxFindCustClrCountItemStateChanged
+    }//GEN-LAST:event_TotalPointItemStateChanged
 
-    private void chkBoxFindCustPointItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chkBoxFindCustPointItemStateChanged
+    private void TelephoneItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_TelephoneItemStateChanged
         // TODO add your handling code here:
         refresh(evt);
-    }//GEN-LAST:event_chkBoxFindCustPointItemStateChanged
+    }//GEN-LAST:event_TelephoneItemStateChanged
 
-    private void chkBoxFindCustType1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chkBoxFindCustType1ItemStateChanged
+    private void CustomerIDItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CustomerIDItemStateChanged
         // TODO add your handling code here:
         refresh(evt);
-    }//GEN-LAST:event_chkBoxFindCustType1ItemStateChanged
+    }//GEN-LAST:event_CustomerIDItemStateChanged
 
-    private void chkBoxFindCustTP1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chkBoxFindCustTP1ItemStateChanged
+    private void FirstNameItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FirstNameItemStateChanged
         // TODO add your handling code here:
         refresh(evt);
-    }//GEN-LAST:event_chkBoxFindCustTP1ItemStateChanged
-
-    private void chkBoxFindCustCustIDItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chkBoxFindCustCustIDItemStateChanged
-        // TODO add your handling code here:
-        refresh(evt);
-    }//GEN-LAST:event_chkBoxFindCustCustIDItemStateChanged
-
-    private void chkBoxFindCustNameItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_chkBoxFindCustNameItemStateChanged
-        // TODO add your handling code here:
-        refresh(evt);
-    }//GEN-LAST:event_chkBoxFindCustNameItemStateChanged
+    }//GEN-LAST:event_FirstNameItemStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox Address;
+    private javax.swing.JCheckBox AvailableCredit;
+    private javax.swing.JCheckBox CreditLimit;
+    private javax.swing.JCheckBox CustType;
+    private javax.swing.JCheckBox CustomerID;
+    private javax.swing.JCheckBox Email;
+    private javax.swing.JCheckBox FirstName;
+    private javax.swing.JCheckBox LastName;
+    private javax.swing.JCheckBox Telephone;
+    private javax.swing.JCheckBox TotalPoint;
     private javax.swing.JButton btnFindCustCancel;
     private javax.swing.JButton btnFindCustFind;
-    private javax.swing.JCheckBox chkBoxFindCustCity;
-    private javax.swing.JCheckBox chkBoxFindCustClrCount;
-    private javax.swing.JCheckBox chkBoxFindCustCreditAvail;
-    private javax.swing.JCheckBox chkBoxFindCustCustID;
-    private javax.swing.JCheckBox chkBoxFindCustEmail;
-    private javax.swing.JCheckBox chkBoxFindCustName;
-    private javax.swing.JCheckBox chkBoxFindCustPoint;
-    private javax.swing.JCheckBox chkBoxFindCustTP;
-    private javax.swing.JCheckBox chkBoxFindCustTP1;
-    private javax.swing.JCheckBox chkBoxFindCustType;
-    private javax.swing.JCheckBox chkBoxFindCustType1;
-    private javax.swing.JCheckBox chkboxFindCustCredit;
     private javax.swing.JComboBox cmbFindCustBy;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTable tableFindCust;
     private javax.swing.JTextField txtFindCustVal;
     // End of variables declaration//GEN-END:variables
@@ -435,9 +427,9 @@ public class CustSearch extends javax.swing.JPanel {
 
     private void refresh(ItemEvent evt) {
         if (evt.getStateChange() == 2) {
-            details.add(((JCheckBox) evt.getSource()).getText());
+            details.add(((JCheckBox) evt.getSource()).getName());
         } else {
-            details.remove(((JCheckBox) evt.getSource()).getText());
+            details.remove(((JCheckBox) evt.getSource()).getName());
         }
         tableFindCust.setModel(ManagerController.refreshTable(current, details));
     }

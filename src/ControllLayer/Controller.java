@@ -14,7 +14,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import onestopshop.LogIn;
 
 public class Controller {
@@ -49,8 +48,10 @@ public class Controller {
     }
 
     public static int createUser(String text, char[] password, String type, String accNum) {
+        System.out.println(text+"\n"+ encrypt(password)+"\n"+
+                type.substring(0,2)+"\n"+ accNum.substring(2, accNum.length()));
         int result = ManagerController.insertUser(text, encrypt(password),
-                type.substring(0,2), accNum.substring(0, accNum.length()));
+                type.substring(0,2), accNum.substring(2, accNum.length()));
         return result;
     }
 
